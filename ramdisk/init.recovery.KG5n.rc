@@ -1,2 +1,5 @@
 #add for board init.rc for recovery mode
 import /init.recovery.common.rc
+on init
+	setprop sys.usb.config adb
+	insmod /sbin/adaptive_ts.ko
