@@ -8,7 +8,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 #INHERIT FROM THIS DEVICE TREE
-$(call inherit-product, device/itel/KG5n/device.mk)
+$(call inherit-product, device/tecno/KG5n/device.mk)
 
 PRODUCT_DEVICE := KG5n
 PRODUCT_NAME := twrp_KG5n
