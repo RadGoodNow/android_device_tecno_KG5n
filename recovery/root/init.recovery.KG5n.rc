@@ -2,4 +2,4 @@
 import /init.recovery.common.rc
 on init
 	setprop sys.usb.config adb
-	insmod /sbin/adaptive_ts.ko
+	insmod /system/modules/adaptive-ts.ko

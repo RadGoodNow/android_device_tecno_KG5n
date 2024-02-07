@@ -73,6 +73,8 @@ service gpsd /vendor/bin/gpsd
     group gps system shell inet net_raw wifi
 
 on init
+	#init touch driver
+	insmod /system/modules/adaptive-ts.ko
     # Apply strict SELinux checking of PROT_EXEC on mmap/mprotect calls.
     write /sys/fs/selinux/checkreqprot 0
     start healthd
