@@ -1,5 +1,30 @@
 #add for board init.rc for recovery mode
 import /init.recovery.common.rc
+service logd /system/bin/logd
+    socket logd stream 0666 logd logd
+    socket logdr seqpacket 0666 logd logd
+    socket logdw dgram+passcred 0222 logd logd
+    file /proc/kmsg r
+    file /dev/kmsg w
+    user logd
+    group logd system package_info readproc
+    capabilities SYSLOG AUDIT_CONTROL
+    priority 10
+	seclabel u:r:recovery:s0
+    writepid /dev/cpuset/system-background/tasks
+
 on init
 	setprop sys.usb.config adb
+	mkdir /dev/cpuset/system-background
+	chmod 755 /system/bin/logd
+	start logd
 	insmod /system/modules/adaptive-ts.ko
+	mkdir /dev/binderfs
+	mount binder binder /dev/binderfs/
+	symlink /dev/binderfs/binder /dev/binder
+	symlink /dev/binderfs/vndbinder /dev/vndbinder
+	symlink /dev/binderfs/hwbinder /dev/hwbinder
+	chmod 0666 /dev/binder
+	chmod 0666 /dev/hwbinder
+	chmod 0666 /dev/vndbinder
+	chmod 0755 /dev/binderfs
