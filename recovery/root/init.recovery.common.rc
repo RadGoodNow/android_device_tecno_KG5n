@@ -331,7 +331,7 @@ on property:ro.bootmode=cali
 
     mkdir /socko
     mkdir /odmko
-    mount_all /etc/recovery.tmpfsdata.fstab
+    mount -a /etc/recovery.tmpfsdata.fstab
     mount tmpfs tmpfs /data mode=0777
     mkdir /system 0755 root root
     symlink /system_root/system /system
@@ -352,9 +352,9 @@ on property:ro.bootmode=cali
     class_start cali
 
     # ToDo: insmod .../${ro.gpu.name}.ko
-    insmod /mnt/product/socko/pvrsrvkm.ko
-    insmod /mnt/product/socko/mali_gondul.ko
-    insmod /mnt/product/socko/mali_kbase.ko
+#    insmod /mnt/product/socko/pvrsrvkm.ko
+#    insmod /mnt/product/socko/mali_gondul.ko
+#    insmod /mnt/product/socko/mali_kbase.ko
 
     #gnss libgps
     mkdir /data/vendor/gnss/ 0776 system system
@@ -422,9 +422,9 @@ on property:ro.bootmode=factorytest
     mkdir /data/vendor/local/media 0770 audioserver system
 
     # ToDo: insmod .../${ro.gpu.name}.ko
-    insmod /mnt/product/socko/pvrsrvkm.ko
-    insmod /mnt/product/socko/mali_gondul.ko
-    insmod /mnt/product/socko/mali_kbase.ko
+#    insmod /mnt/product/socko/pvrsrvkm.ko
+#    insmod /mnt/product/socko/mali_gondul.ko
+#    insmod /mnt/product/socko/mali_kbase.ko
 
     #gnss
     mkdir /data/vendor/gnss/ 0776 system system
