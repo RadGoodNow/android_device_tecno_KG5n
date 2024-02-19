@@ -14,11 +14,13 @@ service logd /system/bin/logd
     writepid /dev/cpuset/system-background/tasks
 
 on init
+	setenforce 0
+	mount /dev/block/by-name/socko /socko
+	find /socko/ -name "*.ko" | xargs insmod
 	setprop sys.usb.config adb
 	mkdir /dev/cpuset/system-background
 	chmod 755 /system/bin/logd
-	start logd
-	insmod /system/modules/adaptive-ts.ko
+	start logd 
 	mkdir /dev/binderfs
 	mount binder binder /dev/binderfs/
 	symlink /dev/binderfs/binder /dev/binder
