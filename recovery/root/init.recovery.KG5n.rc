@@ -19,7 +19,6 @@ on init
 	mkdir /dev/cpuset/system-background
 	chmod 755 /system/bin/logd
 	start logd
-	insmod /system/modules/adaptive-ts.ko
 	mkdir /dev/binderfs
 	mount binder binder /dev/binderfs/
 	symlink /dev/binderfs/binder /dev/binder
