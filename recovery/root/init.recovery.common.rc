@@ -302,6 +302,8 @@ on property:ro.bootmode=cali
     rm /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/vser.gs7 /config/usb_gadget/g1/configs/b.1/f1
 
+    mkdir /socko
+    mkdir /odmko
     mount_all /etc/recovery.tmpfsdata.fstab
     mount tmpfs tmpfs /data mode=0777
     mkdir /system 0755 root root
