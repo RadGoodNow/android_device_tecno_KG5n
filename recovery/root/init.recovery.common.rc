@@ -73,8 +73,34 @@ service gpsd /vendor/bin/gpsd
     group gps system shell inet net_raw wifi
 
 on init
-	#init touch driver
-	insmod /system/modules/adaptive-ts.ko
+	setenforce 0
+	mount /dev/block/by-name/socko_a /socko
+	mount /dev/block/by-name/odmko_a /odmko
+	mount /dev/block/by-name/socko /socko
+	mount /dev/block/by-name/odmko /odmko
+
+#	insmod /system/modules/adaptive-ts.ko
+	insmod /socko/adaptive-ts.ko
+	insmod /socko/flash_ic_ocp8137.ko
+	insmod /socko/mali_kbase.ko
+	insmod /socko/mmdvfs.ko
+	insmod /socko/sprd_cpp.ko
+	insmod /socko/sprd_fd.ko
+	insmod /socko/sprd_flash_drv.ko
+	insmod /socko/sprd_pcie_fm.ko
+	insmod /socko/sprd_sdio_fm.ko
+	insmod /socko/sprd_sensor.ko
+	insmod /socko/sprd_sipc_fm.ko
+	insmod /socko/sprd_sipc2_fm.ko
+	insmod /socko/sprdbt_pcie_tty.ko
+	insmod /socko/sprdbt_sdio_tty.ko
+	insmod /socko/sprdbt_sipc_tty.ko
+	insmod /socko/sprdbt_sipc2_tty.ko
+	insmod /socko/sprdwl_ng.ko
+
+	insmod /odmko/focaltech_fp.ko
+	insmod /odmko/sunwave_fp.ko
+
     # Apply strict SELinux checking of PROT_EXEC on mmap/mprotect calls.
     write /sys/fs/selinux/checkreqprot 0
     start healthd
@@ -88,7 +114,7 @@ on init
     chmod 660 /sys/bus/iio/devices/iio:device1/buffer/enable
     chmod 660 /sys/bus/iio/devices/iio:device1/trigger/current_trigger
 
-    export PATH /sbin:/system/bin:/vendor/bin
+    export PATH /sbin:/system/bin:/system/xbin:/system_ext/bin:/vendor/bin:/vendor/xbin
     export SECONDARY_STORAGE /storage/sdcard0
 
     mkdir /storage
@@ -304,6 +330,8 @@ on property:ro.bootmode=cali
     rm /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/vser.gs7 /config/usb_gadget/g1/configs/b.1/f1
 
+    mkdir /socko
+    mkdir /odmko
     mount_all /etc/recovery.tmpfsdata.fstab
     mount tmpfs tmpfs /data mode=0777
     mkdir /system 0755 root root

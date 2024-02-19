@@ -30,10 +30,13 @@
 /dev/block/by-name/logo                  /logo               emmc    defaults    defaults
 /dev/block/by-name/fbootlogo             /fbootlogo          emmc    defaults    defaults
 
+/dev/block/by-name/socko                 /socko              ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
+/dev/block/by-name/odmko                 /odmko              ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
+
 /dev/block/by-name/system                /system_root        ext4    ro,barrier=1    wait,slotselect
 /dev/block/by-name/vendor                /vendor             ext4    ro,barrier=1    wait,slotselect
-/dev/block/by-name/system_ext             /system_ext        ext4    ro,barrier=1    wait,slotselect
-/dev/block/by-name/product                /product             ext4    ro,barrier=1    wait,slotselect
+/dev/block/by-name/system_ext            /system_ext         ext4    ro,barrier=1    wait,slotselect
+/dev/block/by-name/product               /product            ext4    ro,barrier=1    wait,slotselect
 
 /dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc     wait,check
 
