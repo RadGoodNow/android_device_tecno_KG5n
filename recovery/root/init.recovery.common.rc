@@ -79,7 +79,6 @@ on init
 	mount /dev/block/by-name/socko /socko
 	mount /dev/block/by-name/odmko /odmko
 
-#	insmod /system/modules/adaptive-ts.ko
 	insmod /socko/adaptive-ts.ko
 	insmod /socko/flash_ic_ocp8137.ko
 	insmod /socko/mali_kbase.ko
