@@ -6,6 +6,7 @@
 /dev/block/by-name/teecfg                /teecfg             emmc    defaults    slotselect
 /dev/block/by-name/vbmeta                /vbmeta             emmc    defaults    slotselect
 /dev/block/by-name/vbmeta_system         /vbmeta_system      emmc    defaults    slotselect
+/dev/block/by-name/vbmeta_product        /vbmeta_product     emmc    defaults    slotselect
 /dev/block/by-name/vbmeta_vendor         /vbmeta_vendor      emmc    defaults    slotselect
 /dev/block/by-name/dtbo                  /dtbo               emmc    defaults    slotselect
 
