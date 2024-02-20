@@ -10,21 +10,23 @@ service logd /system/bin/logd
     group logd system package_info readproc
     capabilities SYSLOG AUDIT_CONTROL
     priority 10
-	seclabel u:r:recovery:s0
+    seclabel u:r:recovery:s0
     writepid /dev/cpuset/system-background/tasks
 
 on init
-	setprop 0
-	setprop sys.usb.config adb
-	mkdir /dev/cpuset/system-background
-	chmod 755 /system/bin/logd
-	start logd
-	mkdir /dev/binderfs
-	mount binder binder /dev/binderfs/
-	symlink /dev/binderfs/binder /dev/binder
-	symlink /dev/binderfs/vndbinder /dev/vndbinder
-	symlink /dev/binderfs/hwbinder /dev/hwbinder
-	chmod 0666 /dev/binder
-	chmod 0666 /dev/hwbinder
-	chmod 0666 /dev/vndbinder
-	chmod 0755 /dev/binderfs
+    setenforce 0
+    mount -a /system/etc/recovery.tmpfsdata.fstab
+    setprop 0
+    setprop sys.usb.config adb
+    mkdir /dev/cpuset/system-background
+    chmod 755 /system/bin/logd
+    start logd
+    mkdir /dev/binderfs
+    mount binder binder /dev/binderfs/
+    symlink /dev/binderfs/binder /dev/binder
+    symlink /dev/binderfs/vndbinder /dev/vndbinder
+    symlink /dev/binderfs/hwbinder /dev/hwbinder
+    chmod 0666 /dev/binder
+    chmod 0666 /dev/hwbinder
+    chmod 0666 /dev/vndbinder
+    chmod 0755 /dev/binderfs
