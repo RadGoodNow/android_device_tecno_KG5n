@@ -6,6 +6,7 @@
 /dev/block/by-name/teecfg                /teecfg             emmc    defaults    slotselect
 /dev/block/by-name/vbmeta                /vbmeta             emmc    defaults    slotselect
 /dev/block/by-name/vbmeta_system         /vbmeta_system      emmc    defaults    slotselect
+/dev/block/by-name/vbmeta_product        /vbmeta_product     emmc    defaults    slotselect
 /dev/block/by-name/vbmeta_vendor         /vbmeta_vendor      emmc    defaults    slotselect
 /dev/block/by-name/dtbo                  /dtbo               emmc    defaults    slotselect
 
@@ -33,7 +34,7 @@
 system /system ext4 ro,barrier=1 wait,avb=vbmeta_system,logical,first_stage_mount,slotselect
 system_ext /system_ext ext4 ro,barrier=1 wait,avb=vbmeta_system_ext,logical,first_stage_mount,slotselect
 vendor /vendor ext4 ro,barrier=1 wait,avb=vbmeta_vendor,logical,first_stage_mount,slotselect
-product /product ext4 ro,barrier=1 wait,avb=vbmeta,logical,first_stage_mount,slotselect
+product /product ext4 ro,barrier=1 wait,avb=vbmeta_product,logical,first_stage_mount,slotselect
 /dev/block/by-name/metadata /metadata    ext4 nodev,noatime,nosuid,errors=panic wait,formattable,first_stage_mount,check
 
 /dev/block/by-name/socko                 /socko              ext4    noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc    wait,check,slotselect
