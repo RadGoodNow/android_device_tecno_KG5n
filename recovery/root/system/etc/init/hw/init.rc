@@ -28,6 +28,8 @@ on init
     mkdir /acct/uid
 
     mkdir /sdcard
+    mkdir /socko
+    mkdir /odmko
     mkdir /system
     mkdir /data
     mkdir /cache
