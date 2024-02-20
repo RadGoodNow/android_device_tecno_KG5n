@@ -305,6 +305,7 @@ on property:ro.bootmode=cali
 
     mkdir /socko
     mount -a /etc/recovery.tmpfsdata.fstab
+    mount /mnt/vendor
     mount tmpfs tmpfs /data mode=0777
     mount /socko
     mkdir /system 0755 root root
