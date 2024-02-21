@@ -33,9 +33,9 @@ Minor checks
 - [ ] input devices via USB (USB-OTG) - keyboard, mouse and disks
 - [ ] USB mass storage export
 - [x] set brightness
-- [ ] vibrate
+- [ ] vibrate (in process)
 - [x] screenshot
-- [ ] partition SD card
+- [x] partition SD card
 
 Crashes not are fixed.
 
