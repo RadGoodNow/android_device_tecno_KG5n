@@ -1,4 +1,8 @@
 import /init.recovery.${ro.hardware}.rc
+import /init.recovery.service.rc
+import /init.recovery.hlthchrg.rc
+import /init.recovery.ldconfig.rc
+import /init.recovery.usb.rc
 
 on early-init
     # Set the security context of /postinstall if present.
