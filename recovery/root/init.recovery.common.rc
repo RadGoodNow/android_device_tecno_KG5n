@@ -303,11 +303,9 @@ on property:ro.bootmode=cali
     rm /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/vser.gs7 /config/usb_gadget/g1/configs/b.1/f1
 
-    mkdir /socko
     mount -a /etc/recovery.tmpfsdata.fstab
-    mount /mnt/vendor
+    mount_all /etc/recovery.tmpfsdata.fstab
     mount tmpfs tmpfs /data mode=0777
-    mount /socko
     mkdir /system 0755 root root
     symlink /system_root/system /system
     chown system system /data
@@ -327,23 +325,6 @@ on property:ro.bootmode=cali
     class_start cali
 	#init touch driver
     # ToDo: insmod .../${ro.gpu.name}.ko
-    insmod /socko/adaptive-ts.ko
-    insmod /socko/flash_ic_ocp8137.ko
-    insmod /socko/mali_kbase.ko
-    insmod /socko/mmdvfs.ko
-    insmod /socko/sprd_cpp.ko
-    insmod /socko/sprd_fd.ko
-    insmod /socko/sprd_flash_drv.ko
-    insmod /socko/sprd_pcie_fm.ko
-    insmod /socko/sprd_sdio_fm.ko
-    insmod /socko/sprd_sensor.ko
-    insmod /socko/sprd_sipc_fm.ko
-    insmod /socko/sprd_sipc2_fm.ko
-    insmod /socko/sprdbt_pcie_tty.ko
-    insmod /socko/sprdbt_sdio_tty.ko
-    insmod /socko/sprdbt_sipc_tty.ko
-    insmod /socko/sprdbt_sipc2_tty.ko
-    insmod /socko/sprdwl_ng.ko
 
     #gnss libgps
     mkdir /data/vendor/gnss/ 0776 system system
@@ -384,10 +365,9 @@ on property:ro.bootmode=cali
 on property:ro.bootmode=factorytest
     setprop sys.usb.config adb,vser,gser
 
-    mkdir /odmko
     mount -a /etc/recovery.tmpfsdata.fstab
+    mount_all /etc/recovery.tmpfsdata.fstab
     mount tmpfs tmpfs /data mode=0777
-    mount /odmko
     mkdir /system 0755 root root
     symlink /system_root/system /system
     trigger post-fs
@@ -413,8 +393,6 @@ on property:ro.bootmode=factorytest
     mkdir /data/vendor/local/media 0770 audioserver system
 
     # ToDo: insmod .../${ro.gpu.name}.ko
-    insmod /odmko/focaltech_fp.ko
-    insmod /odmko/sunwave_fp.ko
 
     #gnss
     mkdir /data/vendor/gnss/ 0776 system system
