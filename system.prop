@@ -1,4 +1,3 @@
-ro.unisoc.platform=UMS9230
 ro.hardware=ums9230
 ro.hardware.kmsetkey=trustonic
 ro.mtk_trustonic_tee_support=1
