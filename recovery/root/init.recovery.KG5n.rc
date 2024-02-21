@@ -32,11 +32,9 @@ on init
     chmod 0666 /dev/vndbinder
     chmod 0755 /dev/binderfs
 
-# forked on Dextter-Blog/android_device_tecno_KG5j/blob/android-11/rootdir/etc/init.sensor_1_0.rc
 on post-fs-data
-    # calibration
-    mkdir /data/vendor/sensor 0774 system system
-    # Sensor
+# forked on Dextter-Blog/android_device_tecno_KG5j/blob/android-11/rootdir/etc/init.sensor_1_0.rc
+# Sensor
     chmod 0660 /dev/hwmsensor
     chmod 0660 /dev/msensor
     chmod 0660 /dev/gsensor
