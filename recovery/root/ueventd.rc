@@ -71,3 +71,30 @@ subsystem sound
 #SDD: add ANDROIDRBE-357 by jixue.tang for system monitor feature. Start
 /dev/ensignal   0666   root   root
 #SDD: add ANDROIDRBE-357 by jixue.tang for system monitor feature. End
+
+#GPIO
+/dev/mtgpio               0600   radio      root
+
+#FOR VIA MODEM
+/dev/ttySDIO*             0660   radio      sdcard_rw
+/dev/ttyRB*               0660   radio      radio
+
+# Mali node
+/dev/mali                 0666   system     graphics
+
+# Change ION driver permission
+/dev/ion                  0666   system     graphics
+
+#touch
+/dev/touch                0660   root       system
+/dev/hotknot              0660   root       system
+
+#hang_detect
+/dev/RT_Monitor           0660   system     system
+/dev/kick_powerkey        0660   system     system
+
+#MTK In-House TEE
+/dev/ttyACM0              0660   radio      radio
+
+# TrustKernel add
+/dev/tkcoredrv            0600   system     system
