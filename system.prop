@@ -1,6 +1,5 @@
 ro.hardware=KG5n
 ro.hardware.kmsetkey=trustonic
-ro.mtk_trustonic_tee_support=1
 ro.crypto.volume.filenames_mode=aes-256-cts
 ro.sys.usb.bicr=no
 ro.sys.usb.storage.type=mtp
