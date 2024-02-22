@@ -1,9 +1,10 @@
-/dev/block/by-name/boot                  /boot               emmc    defaults    slotselect,backup=1
-/dev/block/by-name/vbmeta                /vbmeta             emmc    defaults    slotselect,backup=1
-/dev/block/by-name/vbmeta_system         /vbmeta_system      emmc    defaults    slotselect,backup=1
-/dev/block/by-name/vbmeta_product        /vbmeta_product     emmc    defaults    slotselect,backup=1
-/dev/block/by-name/vbmeta_vendor         /vbmeta_vendor      emmc    defaults    slotselect,backup=1
-/dev/block/by-name/dtbo                  /dtbo               emmc    defaults    slotselect,backup=1
+/dev/block/by-name/boot                  /boot               emmc    defaults     slotselect,backup=1
+/dev/block/by-name/vbmeta                /vbmeta             emmc    defaults     slotselect,backup=1
+/dev/block/by-name/vbmeta_system         /vbmeta_system      emmc    defaults     slotselect,backup=1
+/dev/block/by-name/vbmeta_product        /vbmeta_product     emmc    defaults     slotselect,backup=1
+/dev/block/by-name/vbmeta_vendor         /vbmeta_vendor      emmc    defaults     slotselect,backup=1
+/dev/block/by-name/dtbo                  /dtbo               emmc    defaults     slotselect,backup=1
+/dev/block/by-name/misc                  /misc               emmc    defaults     defaults
 
 /dev/block/by-name/socko                 /socko              ext4    noatime,nosuid,nodev,noauto_da_alloc    wait,check,slotselect,backup=1
 /dev/block/by-name/odmko                 /odmko              ext4    noatime,nosuid,nodev,noauto_da_alloc    wait,check,slotselect,backup=1
