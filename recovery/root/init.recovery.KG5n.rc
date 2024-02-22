@@ -33,7 +33,6 @@ on init
     chmod 0755 /dev/binderfs
 
 on post-fs-data
-# forked on Dextter-Blog/android_device_tecno_KG5j/blob/android-11/rootdir/etc/init.sensor_1_0.rc
 # Sensor
     chmod 0660 /dev/hwmsensor
     chmod 0660 /dev/msensor
@@ -43,19 +42,6 @@ on post-fs-data
     chmod 0660 /dev/aal_als
     chmod 0660 /dev/humidity
     chmod 0660 /dev/barometer
-    chmod 0660 /dev/m_als_misc
-    chmod 0660 /dev/m_baro_misc
-    chmod 0660 /dev/m_hmdy_misc
-    chmod 0660 /dev/m_ps_misc
-    chmod 0660 /dev/m_acc_misc
-    chmod 0660 /dev/m_mag_misc
-    chmod 0660 /dev/m_gyro_misc
-    chmod 0660 /dev/m_act_misc
-    chmod 0660 /dev/m_pedo_misc
-    chmod 0660 /dev/m_situ_misc
-    chmod 0660 /dev/m_step_c_misc
-    chmod 0660 /dev/m_fusion_misc
-    chmod 0660 /dev/m_bio_misc
     chmod 0660 /dev/biometric
     chmod 0660 /dev/sensorlist
 
@@ -67,19 +53,6 @@ on post-fs-data
     chown system system /dev/aal_als
     chown system system /dev/humidity
     chown system system /dev/barometer
-    chown system system /dev/m_als_misc
-    chown system system /dev/m_baro_misc
-    chown system system /dev/m_hmdy_misc
-    chown system system /dev/m_ps_misc
-    chown system system /dev/m_acc_misc
-    chown system system /dev/m_mag_misc
-    chown system system /dev/m_gyro_misc
-    chown system system /dev/m_act_misc
-    chown system system /dev/m_pedo_misc
-    chown system system /dev/m_situ_misc
-    chown system system /dev/m_step_c_misc
-    chown system system /dev/m_fusion_misc
-    chown system system /dev/m_bio_misc
     chown system system /dev/biometric
     chown system system /dev/sensorlist
 
