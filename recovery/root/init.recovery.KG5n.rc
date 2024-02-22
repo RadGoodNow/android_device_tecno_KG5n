@@ -14,8 +14,6 @@ service logd /system/bin/logd
     # writepid /dev/cpuset/system-background/tasks
 
 on init
-    setenforce 0
-    mount -a /system/etc/recovery.tmpfsdata.fstab
     mount_all /system/etc/recovery.tmpfsdata.fstab
 
     setprop sys.usb.config adb
