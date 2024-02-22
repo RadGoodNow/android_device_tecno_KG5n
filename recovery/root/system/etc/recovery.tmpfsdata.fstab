@@ -8,10 +8,10 @@
 /dev/block/by-name/socko                 /socko              ext4    noatime,nosuid,nodev,noauto_da_alloc    wait,check,slotselect,backup=1
 /dev/block/by-name/odmko                 /odmko              ext4    noatime,nosuid,nodev,noauto_da_alloc    wait,check,slotselect,backup=1
 
-/dev/block/mapper/system                 /system_root        ext4    ro,barrier=1    wait,slotselect,backup=1
-/dev/block/mapper/vendor                 /vendor             ext4    ro,barrier=1    wait,slotselect,backup=1
-/dev/block/mapper/system_ext             /system_ext         ext4    ro,barrier=1    wait,slotselect,backup=1
-/dev/block/mapper/product                /product            ext4    ro,barrier=1    wait,slotselect,backup=1
+/dev/block/mapper/system                 /system_root        ext4    ro    wait,slotselect,backup=1
+/dev/block/mapper/vendor                 /vendor             ext4    ro    wait,slotselect,backup=1
+/dev/block/mapper/system_ext             /system_ext         ext4    ro    wait,slotselect,backup=1
+/dev/block/mapper/product                /product            ext4    ro    wait,slotselect,backup=1
 
 /dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,noauto_da_alloc     wait,check,backup=1
 
