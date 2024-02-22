@@ -1,5 +1,4 @@
 import /init.recovery.${ro.hardware}.rc
-import /init.recovery.service.rc
 import /init.recovery.ldconfig.rc
 import /init.recovery.usb.rc
 
