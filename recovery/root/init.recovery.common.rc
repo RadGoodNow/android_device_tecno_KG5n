@@ -101,17 +101,17 @@ on init
     loglevel 7
 
     chown system root /proc/mdbg/assert
-    chown system root /proc/mdbg/wdtirq
+    # chown system root /proc/mdbg/wdtirq
     chown system root /proc/mdbg/at_cmd
     chown system root /proc/mdbg/loopcheck
 
     chmod 760 /proc/mdbg/assert
-    chmod 760 /proc/mdbg/wdtirq
+    # chmod 760 /proc/mdbg/wdtirq
     chmod 760 /proc/mdbg/at_cmd
     chmod 760 /proc/mdbg/loopcheck
 
-    chown system root /proc/cpwcn/wdtirq
-    chmod 766 /proc/cpwcn/wdtirq
+    # chown system root /proc/cpwcn/wdtirq
+    # chmod 766 /proc/cpwcn/wdtirq
 
     # Create mount-point for ConfigFS USB gadgets
     # Add standard gadget entries
