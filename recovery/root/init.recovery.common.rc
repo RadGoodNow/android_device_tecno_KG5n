@@ -189,10 +189,6 @@ on boot
     chmod 660 /sys/class/power_supply/battery/input_current_limit
     chmod 660 /sys/class/power_supply/battery/constant_charge_current
 
-on fs
-    #mkdir /data/misc/bluedroid 0770 bluetooth net_bt_stack
-    mkdir /data/misc/bluetooth 0770 system system
-
 on post-fs-data
     # We chown/chmod /data again so because mount is run as root + defaults
     chown system system /data
