@@ -24,7 +24,7 @@ Medium checks
 
 Minor checks
 - [ ] MTP export
-- [ ] reboot to bootloader
+- [x] reboot to bootloader
 - [x] reboot to recovery
 - [x] poweroff
 - [x] battery level
