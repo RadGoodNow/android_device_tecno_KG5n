@@ -10,7 +10,6 @@ system                                   /system             ext4    ro wait,avb
 system_ext                               /system_ext         ext4    ro wait,logical,slotselect
 vendor                                   /vendor             ext4    ro wait,avb=vbmeta_vendor,logical,slotselect
 product                                  /product            ext4    ro wait,avb=vbmeta_product,logical,slotselect
-/dev/block/by-name/metadata              /metadata           ext4    nodev,noatime,nosuid,discard,errors=panic wait,formattable,first_stage_mount,check
 
 /dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,noauto_da_alloc wait,first_stage_mount,check
 
