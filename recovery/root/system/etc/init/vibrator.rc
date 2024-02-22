@@ -1,4 +1,7 @@
+on init
+    start vendor.sprd.hardware.vibrator-service
 service vendor.sprd.hardware.vibrator-service /vendor/bin/hw/vendor.sprd.hardware.vibrator-service
     class hal
     user system
     group system
+    seclabel u:r:recovery:s0
