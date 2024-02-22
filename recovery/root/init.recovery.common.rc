@@ -74,7 +74,6 @@ service gpsd /vendor/bin/gpsd
 
 on init
     # Apply strict SELinux checking of PROT_EXEC on mmap/mprotect calls.
-    setenforce 0
     write /sys/fs/selinux/checkreqprot 0
     start healthd
     chown system system /sys/bus/iio/devices/trigger0/name
