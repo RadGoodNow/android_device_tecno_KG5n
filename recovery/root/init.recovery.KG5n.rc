@@ -11,7 +11,7 @@ service logd /system/bin/logd
     capabilities SYSLOG AUDIT_CONTROL
     priority 10
     seclabel u:r:recovery:s0
-    writepid /dev/cpuset/system-background/tasks
+    # writepid /dev/cpuset/system-background/tasks
 
 on init
     setenforce 0
