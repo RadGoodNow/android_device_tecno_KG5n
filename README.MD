@@ -5,7 +5,7 @@ TWRP device tree
 
  Blocking checks
 - [x] Correct screen/recovery size
-- [x] Working Touch, screen (may not work in test builds)
+- [x] Working Touch, screen
 - [x] Backup to internal/microSD (more thorough testing needed)
 - [x] Restore from internal/microSD
 - [ ] reboot to system
@@ -18,7 +18,7 @@ Medium checks
 - [x] F2FS/EXT4 Support, exFAT/NTFS where supported
 - [x] all important partitions listed in mount/backup lists
 - [ ] backup/restore to/from external (USB-OTG) storage
-- [ ] backup/restore to/from adb (https://gerrit.omnirom.org/#/c/15943/)
+- [x] backup/restore to/from adb
 - [ ] decrypt /data
 - [ ] Correct date
 
