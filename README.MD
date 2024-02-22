@@ -6,7 +6,7 @@ TWRP device tree
  Blocking checks
 - [x] Correct screen/recovery size
 - [x] Working Touch, screen
-- [x] Backup to internal/microSD (more thorough testing needed)
+- [x] Backup to internal/microSD
 - [x] Restore from internal/microSD
 - [ ] reboot to system
 - [x] ADB
