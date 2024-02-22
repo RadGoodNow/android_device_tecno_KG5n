@@ -34,28 +34,6 @@ on init
 
 on post-fs-data
 # Sensor
-    chmod 0660 /dev/hwmsensor
-    chmod 0660 /dev/msensor
-    chmod 0660 /dev/gsensor
-    chmod 0660 /dev/als_ps
-    chmod 0660 /dev/gyroscope
-    chmod 0660 /dev/aal_als
-    chmod 0660 /dev/humidity
-    chmod 0660 /dev/barometer
-    chmod 0660 /dev/biometric
-    chmod 0660 /dev/sensorlist
-
-    chown system system /dev/hwmsensor
-    chown system system /dev/msensor
-    chown radio system /dev/gsensor
-    chown radio system /dev/als_ps
-    chown radio system /dev/gyroscope
-    chown system system /dev/aal_als
-    chown system system /dev/humidity
-    chown system system /dev/barometer
-    chown system system /dev/biometric
-    chown system system /dev/sensorlist
-
     insmod /socko/adaptive-ts.ko
     insmod /socko/mali_kbase.ko
     insmod /odmko/sunwave_fp.ko
