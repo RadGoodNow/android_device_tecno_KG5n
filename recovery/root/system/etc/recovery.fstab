@@ -4,17 +4,18 @@
 /dev/block/by-name/vbmeta_system         /vbmeta_system      emmc    defaults     slotselect,backup=1
 /dev/block/by-name/vbmeta_product        /vbmeta_product     emmc    defaults     slotselect,backup=1
 /dev/block/by-name/vbmeta_vendor         /vbmeta_vendor      emmc    defaults     slotselect,backup=1
-system                                   /system             ext4    ro,barrier=1 wait,avb=vbmeta_system,logical,first_stage_mount,slotselect,backup=1
-system_ext                               /system_ext         ext4    ro,barrier=1 wait,logical,first_stage_mount,slotselect,backup=1
-vendor                                   /vendor             ext4    ro,barrier=1 wait,avb=vbmeta_vendor,logical,first_stage_mount,slotselect,backup=1
-product                                  /product            ext4    ro,barrier=1 wait,avb=vbmeta_product,logical,first_stage_mount,slotselect,backup=1
-/dev/block/by-name/metadata              /metadata           ext4    nodev,noatime,nosuid,errors=panic wait,formattable,first_stage_mount,check,backup=1
+
+system                                   /system             ext4    ro,barrier=1 wait,avb=vbmeta_system,logical,first_stage_mount,slotselect
+system_ext                               /system_ext         ext4    ro,barrier=1 wait,logical,first_stage_mount,slotselect
+vendor                                   /vendor             ext4    ro,barrier=1 wait,avb=vbmeta_vendor,logical,first_stage_mount,slotselect
+product                                  /product            ext4    ro,barrier=1 wait,avb=vbmeta_product,logical,first_stage_mount,slotselect
+/dev/block/by-name/metadata              /metadata           ext4    nodev,noatime,nosuid,errors=panic wait,formattable,first_stage_mount,check
 
 #/dev/block/by-name/userdata             /data               f2fs    noatime,nosuid,nodev,discard,inline_xattr,inline_data,fsync_mode=nobarrier,inlinecrypt latemount,wait,check,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,reservedsize=128M,checkpoint=fs,formattable
 
-/dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,noauto_da_alloc wait,check
+/dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,noauto_da_alloc wait,first_stage_mount,check
 
-/dev/block/by-name/socko                 /socko              ext4    ro,noatime,nosuid,nodev,noauto_da_alloc wait,avb=socko,check,slotselect,backup=1
-/dev/block/by-name/odmko                 /odmko              ext4    ro,noatime,nosuid,nodev,noauto_da_alloc wait,avb=odmko,check,slotselect,backup=1
+/dev/block/by-name/socko                 /socko              ext4    ro,noatime,nosuid,nodev,noauto_da_alloc wait,latemount,avb=socko,check,slotselect,backup=1
+/dev/block/by-name/odmko                 /odmko              ext4    ro,noatime,nosuid,nodev,noauto_da_alloc wait,latemount,avb=odmko,check,slotselect,backup=1
 
 /dev/block/mmcblk1p1                     /storage/sdcard0    vfat    defaults      defaults,check,backup=1
