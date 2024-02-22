@@ -9,9 +9,7 @@ system                                   /system             ext4    ro,barrier=
 system_ext                               /system_ext         ext4    ro,barrier=1 wait,logical,first_stage_mount,slotselect
 vendor                                   /vendor             ext4    ro,barrier=1 wait,avb=vbmeta_vendor,logical,first_stage_mount,slotselect
 product                                  /product            ext4    ro,barrier=1 wait,avb=vbmeta_product,logical,first_stage_mount,slotselect
-/dev/block/by-name/metadata              /metadata           ext4    nodev,noatime,nosuid,errors=panic wait,formattable,first_stage_mount,check
-
-#/dev/block/by-name/userdata             /data               f2fs    noatime,nosuid,nodev,discard,inline_xattr,inline_data,fsync_mode=nobarrier,inlinecrypt latemount,wait,check,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,reservedsize=128M,checkpoint=fs,formattable
+#/dev/block/by-name/metadata              /metadata           ext4    nodev,noatime,nosuid,errors=panic wait,formattable,first_stage_mount,check
 
 /dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,noauto_da_alloc wait,first_stage_mount,check
 
