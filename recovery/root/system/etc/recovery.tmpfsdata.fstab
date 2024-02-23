@@ -1,11 +1,21 @@
+/dev/block/by-name/boot                  /boot               emmc    defaults     slotselect
+/dev/block/by-name/vbmeta                /vbmeta             emmc    defaults     slotselect
+/dev/block/by-name/vbmeta_system         /vbmeta_system      emmc    defaults     slotselect
+/dev/block/by-name/vbmeta_product        /vbmeta_product     emmc    defaults     slotselect
+/dev/block/by-name/vbmeta_vendor         /vbmeta_vendor      emmc    defaults     slotselect
+/dev/block/by-name/dtbo                  /dtbo               emmc    defaults     slotselect
 /dev/block/by-name/misc                  /misc               emmc    defaults     defaults
 
-/dev/block/by-name/socko                 /socko              ext4    noatime,nosuid,nodev,noauto_da_alloc    wait,check,slotselect,backup=1
-/dev/block/by-name/odmko                 /odmko              ext4    noatime,nosuid,nodev,noauto_da_alloc    wait,check,slotselect,backup=1
+/dev/block/by-name/socko                 /socko              ext4    noatime,nosuid,nodev,noauto_da_alloc    wait,check,slotselect
+/dev/block/by-name/odmko                 /odmko              ext4    noatime,nosuid,nodev,noauto_da_alloc    wait,check,slotselect
 
-/dev/block/mapper/system                 /system_root        ext4    ro    wait,slotselect,backup=1
-/dev/block/mapper/vendor                 /vendor             ext4    ro    wait,slotselect,backup=1
+/dev/block/mapper/system                 /system_root        ext4    ro,barrier=1    wait,slotselect
+/dev/block/mapper/vendor                 /vendor             ext4    ro,barrier=1    wait,slotselect
+/dev/block/mapper/system_ext             /system_ext         ext4    ro,barrier=1    wait,slotselect
+/dev/block/mapper/product                /product            ext4    ro,barrier=1    wait,slotselect
+
+/dev/block/by-name/metadata              /metadata           ext4    nodev,noatime,nosuid,errors=panic wait,formattable,check
 
 /dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,noauto_da_alloc     wait,check,backup=1
 
-/dev/block/mmcblk1p1                     /storage/sdcard0    vfat    defaults    defaults,backup=1
+/dev/block/mmcblk1p1                     /storage/sdcard0    vfat    defaults    defaults
