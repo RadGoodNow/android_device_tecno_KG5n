@@ -31,7 +31,7 @@ Minor checks
 - [x] temperature
 - [ ] encrypted backups
 - [x] input devices via USB (USB-OTG) - keyboard, mouse and disks
-- [ ] USB mass storage export
+- [x] USB mass storage export
 - [x] set brightness
 - [ ] vibrate
 - [x] screenshot
