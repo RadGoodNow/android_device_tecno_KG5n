@@ -1,7 +1,7 @@
 TWRP device tree
 
 # experimental_twrp_tecno_KG5n
- created by RadGoodNow, mainteined by Arturmes
+ created by RadGoodNow and arturmes
 
  Blocking checks
 - [x] Correct screen/recovery size
