@@ -12,8 +12,6 @@ on early-init
 
     start ueventd
 
-    setprop sys.usb.configfs 0
-
 on init
     export ANDROID_ROOT /system
     export ANDROID_DATA /data
