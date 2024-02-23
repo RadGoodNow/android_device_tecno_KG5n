@@ -1,0 +1,3 @@
+#!/system/bin/sh
+
+linker64 /system_ext/bin/mount.ntfs
