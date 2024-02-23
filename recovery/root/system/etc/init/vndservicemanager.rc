@@ -1,4 +1,3 @@
-
 service vndservicemanager /system/bin/vndservicemanager /dev/vndbinder
     disabled
     user root
