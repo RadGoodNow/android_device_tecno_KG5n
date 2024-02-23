@@ -15,7 +15,7 @@ service logd /system/bin/logd
 
 on init
     mount_all /system/etc/recovery.tmpfsdata.fstab
-
+	write /sys/devices/platform/extcon-gpio/extcon_hostenable enabled
     setprop sys.usb.config adb
     mkdir /dev/cpuset/system-background
     chmod 755 /system/bin/logd
