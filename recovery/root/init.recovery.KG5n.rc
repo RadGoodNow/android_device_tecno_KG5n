@@ -28,7 +28,7 @@ on init
     chmod 0755 /dev/binderfs
     symlink /vendor/firmware /system/etc/firmware
 
-on post-fs-data
+on fs
 # Sensor
     insmod /socko/adaptive-ts.ko
     insmod /socko/mali_kbase.ko
