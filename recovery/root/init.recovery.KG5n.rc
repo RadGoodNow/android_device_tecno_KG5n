@@ -26,6 +26,7 @@ on init
     chmod 0666 /dev/hwbinder
     chmod 0666 /dev/vndbinder
     chmod 0755 /dev/binderfs
+    symlink /vendor/firmware /system/etc/firmware
 
 on post-fs-data
 # Sensor
