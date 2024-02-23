@@ -19,5 +19,5 @@ product                                  /product            ext4    ro wait,avb
 /dev/block/mmcblk1p1                     /storage/sdcard0    vfat    defaults      defaults,check,backup=1
 
 #MD:add for storage_feature_cloudctl CGCGJHRS-9029 by xiaoxiang.xiong, 20220311 start
-/dev/block/platform/soc/soc:ap-apb/201d0000.sdio/by-name/tranfs /tranfs ext4 rw,noatime,nosuid,nodev,noauto_da_alloc wait,check,first_stage_mount,formattable,nofail
+/dev/block/platform/soc/soc:ap-apb/201d0000.sdio/by-name/tranfs /tranfs ext4 rw,noatime,nosuid,nodev,noauto_da_alloc wait,latemount,check,formattable,nofail
 #MD:add for storage_feature_cloudctl CGCGJHRS-9029 by xiaoxiang.xiong, 20220311 end
