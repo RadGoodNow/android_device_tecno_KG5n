@@ -19,3 +19,7 @@
 /dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,noauto_da_alloc     wait,check,backup=1
 
 /dev/block/mmcblk1p1                     /storage/sdcard0    vfat    defaults    defaults
+
+#MD:add for storage_feature_cloudctl CGCGJHRS-9029 by xiaoxiang.xiong, 20220311 start
+/dev/block/platform/soc/soc:ap-apb/201d0000.sdio/by-name/tranfs /tranfs ext4 rw,noatime,nosuid,nodev,noauto_da_alloc wait,check,formattable,nofail
+#MD:add for storage_feature_cloudctl CGCGJHRS-9029 by xiaoxiang.xiong, 20220311 end
