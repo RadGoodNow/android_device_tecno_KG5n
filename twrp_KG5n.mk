@@ -4,6 +4,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 #INHERIT GSI KEYS
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
+# Virtual A/B OTA
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
 #INHERIT TWRP
 $(call inherit-product, vendor/twrp/config/common.mk)
 
@@ -14,4 +17,5 @@ PRODUCT_DEVICE := KG5n
 PRODUCT_NAME := twrp_KG5n
 PRODUCT_BRAND := tecno
 PRODUCT_MODEL := Spark 8C
-PRODUCT_MANUFACTURER := tecno
+PRODUCT_MANUFACTURER := Tecno Mobility Limited
+PRODUCT_RELEASE_NAME := Tecno Spark 8C
