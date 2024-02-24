@@ -37,7 +37,7 @@ Minor checks
 - [x] screenshot
 - [ ] partition SD card
 
-Crashes not are fixed.
+Finally, crashes are fixed.
 
 BTW, unofficialtwrp.com, stop stealing our TWRP images. We have warned you :) 
 and yeah fix your "Contact us" page, we want to talk with you guys.
