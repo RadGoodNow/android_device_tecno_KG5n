@@ -1,9 +1,9 @@
-/dev/block/by-name/boot                  /boot               emmc    defaults     defaults,slotselect,backup=1
+/dev/block/by-name/boot                  /boot               emmc    defaults     defaults,slotselect
 /dev/block/by-name/dtbo                  /dtbo               emmc    defaults     defaults,slotselect
-/dev/block/by-name/vbmeta                /vbmeta             emmc    defaults     slotselect,backup=1
-/dev/block/by-name/vbmeta_system         /vbmeta_system      emmc    defaults     slotselect,backup=1
-/dev/block/by-name/vbmeta_product        /vbmeta_product     emmc    defaults     slotselect,backup=1
-/dev/block/by-name/vbmeta_vendor         /vbmeta_vendor      emmc    defaults     slotselect,backup=1
+/dev/block/by-name/vbmeta                /vbmeta             emmc    defaults     slotselect
+/dev/block/by-name/vbmeta_system         /vbmeta_system      emmc    defaults     slotselect
+/dev/block/by-name/vbmeta_product        /vbmeta_product     emmc    defaults     slotselect
+/dev/block/by-name/vbmeta_vendor         /vbmeta_vendor      emmc    defaults     slotselect
 /dev/block/by-name/misc                  /misc               emmc    defaults     defaults
 
 system                                   /system             ext4    ro wait,avb=vbmeta_system,logical,first_stage_mount,slotselect
@@ -16,4 +16,4 @@ product                                  /product            ext4    ro wait,avb
 /dev/block/by-name/socko                 /socko              ext4    ro,noatime,nosuid,nodev,noauto_da_alloc wait,latemount,avb=socko,check,slotselect
 /dev/block/by-name/odmko                 /odmko              ext4    ro,noatime,nosuid,nodev,noauto_da_alloc wait,latemount,avb=odmko,check,slotselect
 
-/dev/block/mmcblk1p1                     /storage/sdcard0    vfat    defaults      defaults,check,backup=1
+/dev/block/mmcblk1p1                     /storage/sdcard0    vfat    defaults      defaults,check
