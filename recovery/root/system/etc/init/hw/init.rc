@@ -36,7 +36,6 @@ on init
     mkdir /mnt/system
     mkdir /metadata
     mkdir /misc
-    mkdir /tranfs
     mount tmpfs tmpfs /tmp
 
     chown root shell /tmp
