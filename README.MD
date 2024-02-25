@@ -20,7 +20,7 @@ Medium checks
 - [x] backup/restore to/from external (USB-OTG) storage
 - [x] backup/restore to/from adb
 - [ ] decrypt /data
-- [x] Correct date
+- [ ] Correct date
 
 Minor checks
 - [ ] MTP export
