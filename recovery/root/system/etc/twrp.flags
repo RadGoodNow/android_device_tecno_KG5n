@@ -9,8 +9,9 @@
 /super                   emmc     /dev/block/by-name/super                     flags=display="Super";backup=1;flashimg=1
 /boot                    emmc     /dev/block/by-name/boot                      flags=display=boot;slotselect;backup=1;flashimg=1
 /dtbo                    emmc     /dev/block/by-name/dtbo                      flags=display=dtbo;slotselect;backup=1;flashimg=1
-/misc                    emmc     /dev/block/by-name/misc                      flags=display=misc;slotselect;backup=1;flashimg=1
-/data                    f2fs     /dev/block/by-name/userdata           
+/misc                    emmc     /dev/block/by-name/misc                      flags=display=misc;backup=1;flashimg=1
+/metadata                ext4     /dev/block/by-name/metadata                  flags=display=metadata;backup=1;flashimg=1
+/data                    f2fs     /dev/block/by-name/userdata               
 /mnt/vendor              ext4     /dev/block/by-name/prodnv                    flags=display=prodnv;backup=1;flashimg=1
 /socko                   ext4     /dev/block/by-name/socko                     flags=display=socko;slotselect;backup=1;flashimg=1
 /odmko                   ext4     /dev/block/by-name/odmko                     flags=display=odmko;slotselect;backup=1;flashimg=1
