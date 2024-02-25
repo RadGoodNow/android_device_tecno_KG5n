@@ -1,6 +1,5 @@
 import /init.recovery.${ro.hardware}.rc
 import /init.recovery.usb.rc
-import /init.recovery.ldconfig.rc
 
 on early-init
     # Set the security context of /postinstall if present.
@@ -172,7 +171,7 @@ on property:sys.usb.config=fastboot && property:sys.usb.configfs=0
     setprop sys.usb.state ${sys.usb.config}
 
 # Configfs triggers
-on property:sys.usb.config=none && property:sys.usb.configfs=1
+on property:sys.usb.config=none
     write /config/usb_gadget/g1/UDC "none"
     stop adbd
     stop fastbootd
