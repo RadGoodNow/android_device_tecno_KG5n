@@ -1,7 +1,7 @@
 # Twrp fstab - RadGoodNow & arturmes
 # For Tecno KG5n
 
-# <mount_point>      <fstype>  <device>        <device2>                  <flags>
+# <mount_point>        <fstype>       <device>              <device2>                                  <flags>
 /system_root             ext4     /dev/block/mapper/system                     flags=display="System image";slotselect;backup=1;flashimg=1
 /system_ext              ext4     /dev/block/mapper/system_ext                 flags=display="System_ext image";slotselect;backup=1;flashimg=1
 /product                 ext4     /dev/block/mapper/product                    flags=display="Product image";slotselect;backup=1;flashimg=1
@@ -11,12 +11,12 @@
 /dtbo                    emmc     /dev/block/by-name/dtbo                      flags=display=dtbo;slotselect;backup=1;flashimg=1
 /misc                    emmc     /dev/block/by-name/misc                      flags=display=misc;backup=1;flashimg=1
 /metadata                ext4     /dev/block/by-name/metadata                  flags=display=metadata;backup=1;flashimg=1
-/data                    f2fs     /dev/block/by-name/userdata               
+/data                    f2fs     /dev/block/by-name/userdata
 /mnt/vendor              ext4     /dev/block/by-name/prodnv                    flags=display=prodnv;backup=1;flashimg=1
 /socko                   ext4     /dev/block/by-name/socko                     flags=display=socko;slotselect;backup=1;flashimg=1
 /odmko                   ext4     /dev/block/by-name/odmko                     flags=display=odmko;slotselect;backup=1;flashimg=1
-/logo                    emmc     /dev/block/by-name/logo                      flags=display=logo;backup=1;flashimg=1
-/fbootlogo               emmc     /dev/block/by-name/fbootlogo                 flags=display=Fastboot logo;backup=1;flashimg=1
+/logo                    emmc     /dev/block/by-name/logo                      flags=display="Bootup logo";backup=1;flashimg=1
+/fbootlogo               emmc     /dev/block/by-name/fbootlogo                 flags=display="Fastboot logo";backup=1;flashimg=1
 # AVB
 /vbmeta                  emmc     /dev/block/by-name/vbmeta                    flags=display=vbmeta;slotselect;backup=1;flashimg=1
 /vbmeta_system           emmc     /dev/block/by-name/vbmeta_system             flags=display=vbmeta_system;slotselect;backup=1;flashimg=1
@@ -24,4 +24,4 @@
 /vbmeta_product          emmc     /dev/block/by-name/vbmeta_product            flags=display=vbmeta_product;slotselect;backup=1;flashimg=1
 # Removable storage
 /storage/sdcard0         vfat     /dev/block/mmcblk1p1  /dev/block/mmcblk1     flags=display="external_sd";storage;wipeingui;backup=1;removable;fsflags="utf8"
-/storage/sdcard1         vfat     /dev/block/sda1  /dev/block/sda              flags=display="usb-otg";storage;wipeingui;backup=1;removable;fsflags="utf8"
+/storage/sdcard1         vfat     /dev/block/sda1       /dev/block/sda         flags=display="usb-otg";storage;wipeingui;backup=1;removable;fsflags="utf8"
