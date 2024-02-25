@@ -155,11 +155,6 @@ on post-fs-data
     # We restorecon /data in case the userdata partition has been reset.
     restorecon /data
     mkdir /data/misc 01771 system misc
-    #mkdir /data/misc/bluedroid 0770 bluetooth net_bt_stack
-    mkdir /data/misc/bluetooth 0770 system system
-    copy /system/etc/bluetooth/bt_stack.conf /data/misc/bluedroid/bt_stack.conf
-    chown bluetooth system /data/misc/bluedroid/bt_stack.conf
-    chmod 0640 /data/misc/bluedroid/bt_stack.conf
 
     chmod 666 /sys/module/shub_core/parameters/gryo_firms
     chmod 666 /sys/module/shub_core/parameters/acc_firms
@@ -169,37 +164,6 @@ on post-fs-data
     chmod 666 /sys/module/shub_core/parameters/prox_firms
     chmod 666 /sys/module/firmware_class/parameters/path
     chmod 666 /sys/module/shub_core/parameters/sensor_fusion_mode
-
-    #add wifi
-    mkdir /data/vendor/wifi 0770 wifi wifi
-    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
-    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
-    mkdir /data/system 0770 system system
-    mkdir /etc/wifi 0770 wifi wifi
-    write /data/vendor/wifi/fwpath sta_mode
-    chmod 660 /data/vendor/wifi/fwpath
-    chown wifi wifi /data/vendor/wifi/fwpath
-    rmdir /data/system/wpa_supplicant
-    mkdir /data/misc/dhcp 0770 dhcp dhcp
-
-    #to observe dnsmasq.leases file for dhcp information
-    chown dhcp system /data/misc/dhcp
-    setprop wifi.interface wlan0
-    mkdir /data/misc/dhcp6c 0770 dhcp dhcp
-    chown dhcp system /data/misc/dhcp6c
-
-    # Ylog dir on /data partition
-    mkdir /data/vendor 0751 root root
-    mkdir /data/vendor/local 0751 root root
-
-    # slogmodem config dir
-    mkdir /data/vendor/ylog 0770 shell system
-    mkdir /data/vendor/local/slogmodem 0770 shell system
-    mkdir /data/vendor/local/mlogservice 0770 shell system
-    mkdir /mnt/vendor/sensorhub 0777 system root
-    mkdir /mnt/vendor/productinfo 0771 system root
-    mkdir /mnt/vendor/productinfo/sensor_calibration_data 0770 system root
-    mkdir /data/vendor/local/otpdata 0777 system root
 
 on property:ro.debuggable=1
     write /sys/module/smsg/parameters/debug_enable 1
@@ -260,6 +224,7 @@ on property:ro.bootmode=cali
     mount_all /etc/recovery.tmpfsdata.fstab
     mount tmpfs tmpfs /data mode=0777
     mkdir /system 0755 root root
+    symlink /system_root/system /system
     chown system system /data
     trigger post-fs
     trigger post-fs-data
