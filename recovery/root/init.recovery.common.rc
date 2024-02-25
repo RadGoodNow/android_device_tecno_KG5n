@@ -224,7 +224,6 @@ on property:ro.bootmode=cali
     mount_all /etc/recovery.tmpfsdata.fstab
     mount tmpfs tmpfs /data mode=0777
     mkdir /system 0755 root root
-    symlink /system_root/system /system
     chown system system /data
     trigger post-fs
     trigger post-fs-data
