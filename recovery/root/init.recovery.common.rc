@@ -112,6 +112,7 @@ on init
 on boot
     start boot-hal-1-1
     start health-hal-2-1
+    start charger
 
     write /sys/block/mmcblk0boot0/force_ro 0
     write /sys/block/mmcblk0boot1/force_ro 0
