@@ -1,11 +1,3 @@
-/dev/block/by-name/boot                  /boot               emmc    defaults     defaults,slotselect
-/dev/block/by-name/dtbo                  /dtbo               emmc    defaults     defaults,slotselect
-/dev/block/by-name/vbmeta                /vbmeta             emmc    defaults     slotselect
-/dev/block/by-name/vbmeta_system         /vbmeta_system      emmc    defaults     slotselect
-/dev/block/by-name/vbmeta_product        /vbmeta_product     emmc    defaults     slotselect
-/dev/block/by-name/vbmeta_vendor         /vbmeta_vendor      emmc    defaults     slotselect
-/dev/block/by-name/misc                  /misc               emmc    defaults     defaults
-
 system                                   /system             ext4    ro wait,avb=vbmeta_system,logical,first_stage_mount,slotselect
 system_ext                               /system_ext         ext4    ro wait,logical,first_stage_mount,slotselect
 vendor                                   /vendor             ext4    ro wait,avb=vbmeta_vendor,logical,first_stage_mount,slotselect
