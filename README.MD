@@ -35,7 +35,7 @@ Minor checks
 - [x] set brightness
 - [ ] vibrate
 - [x] screenshot
-- [ ] partition SD card
+- [x] partition SD card
 
 Finally, crashes are fixed.
 
