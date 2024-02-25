@@ -109,9 +109,6 @@ on init
     chmod 760 /proc/mdbg/at_cmd
     chmod 760 /proc/mdbg/loopcheck
 
-    # chown system root /proc/cpwcn/wdtirq
-    # chmod 766 /proc/cpwcn/wdtirq
-
 on boot
     write /sys/block/mmcblk0boot0/force_ro 0
     write /sys/block/mmcblk0boot1/force_ro 0
@@ -259,7 +256,6 @@ on property:ro.bootmode=cali
     mount_all /etc/recovery.tmpfsdata.fstab
     mount tmpfs tmpfs /data mode=0777
     mkdir /system 0755 root root
-    symlink /system_root/system /system
     chown system system /data
     trigger post-fs
     trigger post-fs-data
@@ -275,39 +271,11 @@ on property:ro.bootmode=cali
 
     mkdir /data/sprd_ss 0770 system system
     class_start cali
-	#init touch driver
+
     # ToDo: insmod .../${ro.gpu.name}.ko
 
-    #gnss libgps
-    mkdir /data/vendor/gnss/ 0776 system system
-    mkdir /data/vendor/gnss/bin/ 0776 system system
-    mkdir /data/vendor/gnss/supl/ 0776 system system
-    mkdir /data/vendor/gnss/config/ 0776 system system
-    mkdir /data/vendor/gnss/lte/ 0776 system system
-    chown system system /data/vendor/gnss/bin/gnssmodem.bin
-    chown system system /data/vendor/gnss/config/config.xml
-    chown system system /data/vendor/gnss/supl/supl.xml
-    chown system system /data/vendor/gnss/supl/spirentroot.cer
-    chown system system /data/vendor/gnss/lte/ext.eph
-    chown system system /data/vendor/gnss/lte/jpleph.405
-    chown system system /data/vendor/gnss/lte/raw.obs
-    chown system system /data/vendor/gnss/gnss.log
-    chown system system /data/vendor/gnss/nmea.log
-    chown system system /mnt/vendor/tsx.dat
-    chown system system /mnt/vendor/txdata.txt
-    chown system system /data/vendor/gnss/FlashCfg.cg
-    chmod 666 /data/vendor/gnss/bin/gnssmodem.bin
-    chmod 666 /data/vendor/gnss/config/config.xml
-    chmod 660 /data/vendor/gnss/supl/supl.xml
-    chmod 660 /data/vendor/gnss/supl/spirentroot.cer
-    chmod 666 /data/vendor/gnss/lte/ext.eph
-    chmod 666 /data/vendor/gnss/lte/jpleph.405
-    chmod 660 /data/vendor/gnss/lte/raw.obs
-    chmod 666 /data/vendor/gnss/gnss.log
-    chmod 666 /data/vendor/gnss/nmea.log
     chmod 666 /mnt/vendor/tsx.dat
     chmod 666 /mnt/vendor/txdata.txt
-    chmod 666 /data/vendor/gnss/FlashCfg.cg
 
     start hwservicemanager
     start vendor.slogmodem
@@ -345,45 +313,8 @@ on property:ro.bootmode=factorytest
 
     # ToDo: insmod .../${ro.gpu.name}.ko
 
-    #gnss
-    mkdir /data/vendor/gnss/ 0776 system system
-    mkdir /data/vendor/gnss/bin/ 0776 system system
-    mkdir /data/vendor/gnss/supl/ 0776 system system
-    mkdir /data/vendor/gnss/config/ 0776 system system
-    mkdir /data/vendor/gnss/lte/ 0776 system system
-    chown system system /data/vendor/gnss/bin/gnssmodem.bin
-    chown system system /data/vendor/gnss/config/config.xml
-    chown system system /data/vendor/gnss/supl/supl.xml
-    chown system system /data/vendor/gnss/supl/spirentroot.cer
-    chown system system /data/vendor/gnss/lte/ext.eph
-    chown system system /data/vendor/gnss/lte/jpleph.405
-    chown system system /data/vendor/gnss/lte/raw.obs
-    chown system system /data/vendor/gnss/gnss.log
-    chown system system /data/vendor/gnss/nmea.log
-    chown system system /mnt/vendor/tsx.dat
-    chown system system /mnt/vendor/txdata.txt
-    chown system system /data/vendor/gnss/FlashCfg.cg
-    chmod 666 /data/vendor/gnss/bin/gnssmodem.bin
-    chmod 666 /data/vendor/gnss/config/config.xml
-    chmod 660 /data/vendor/gnss/supl/supl.xml
-    chmod 660 /data/vendor/gnss/supl/spirentroot.cer
-    chmod 666 /data/vendor/gnss/lte/ext.eph
-    chmod 666 /data/vendor/gnss/lte/jpleph.405
-    chmod 660 /data/vendor/gnss/lte/raw.obs
-    chmod 666 /data/vendor/gnss/gnss.log
-    chmod 666 /data/vendor/gnss/nmea.log
     chmod 666 /mnt/vendor/tsx.dat
     chmod 666 /mnt/vendor/txdata.txt
-    chmod 666 /data/vendor/gnss/FlashCfg.cg
-
-    chown system system /sys/class/misc/gnss_common_ctl/gnss_power_enable
-    chown system system /sys/class/misc/gnss_common_ctl/gnss_dump
-    chown system system /sys/class/misc/gnss_common_ctl/gnss_subsys
-    chown system system /dev/gnss_pmnotify_ctl
-    chmod  220 /sys/class/misc/gnss_common_ctl/gnss_power_enable
-    chmod 660 /sys/class/misc/gnss_common_ctl/gnss_dump
-    chmod 660 /sys/class/misc/gnss_common_ctl/gnss_subsys
-    chmod 660  /dev/gnss_pmnotify_ctl
 
     mkdir /data/misc 01771 system misc
     start vendor.cp_diskserver
