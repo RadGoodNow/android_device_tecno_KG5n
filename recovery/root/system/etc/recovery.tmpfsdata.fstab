@@ -3,5 +3,3 @@
 /dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,noauto_da_alloc    wait,check
 /dev/block/by-name/socko                 /socko              ext4    noatime,nosuid,nodev,noauto_da_alloc    wait,check,slotselect
 /dev/block/by-name/odmko                 /odmko              ext4    noatime,nosuid,nodev,noauto_da_alloc    wait,check,slotselect
-
-/dev/block/mmcblk1p1                     /storage/sdcard0    vfat    defaults      defaults,check
