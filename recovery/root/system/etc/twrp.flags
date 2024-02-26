@@ -9,6 +9,7 @@
 /super                   emmc     /dev/block/by-name/super                     flags=display="Super";backup=1;flashimg=1
 /boot                    emmc     /dev/block/by-name/boot                      flags=display=boot;slotselect;backup=1;flashimg=1
 /dtbo                    emmc     /dev/block/by-name/dtbo                      flags=display=dtbo;slotselect;backup=1;flashimg=1
+/uboot                   emmc     /dev/block/by-name/uboot                     flags=display=uboot;slotselect;backup=1;flashimg=1
 /misc                    emmc     /dev/block/by-name/misc                      flags=display=misc;backup=1;flashimg=1
 /metadata                ext4     /dev/block/by-name/metadata                  flags=display=metadata;backup=1;flashimg=1
 /data                    f2fs     /dev/block/by-name/userdata
