@@ -6,3 +6,6 @@ ro.sys.usb.storage.type=mtp
 ro.crypto.metadata.enabled=true
 ro.crypto.support_metadata_encrypt=true
 ro.crypto.uses_fs_ioc_add_encryption_key=true
+
+# USB MTP
+ro.sys.usb.storage.type=mtp
