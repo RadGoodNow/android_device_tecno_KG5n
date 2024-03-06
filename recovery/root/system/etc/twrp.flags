@@ -15,8 +15,8 @@
 /data                    f2fs     /dev/block/by-name/userdata
 /mnt/vendor              ext4     /dev/block/by-name/prodnv                    flags=display=prodnv;backup=1;flashimg=1
 /persist                 emmc     /dev/block/by-name/persist                   flags=display=persist;backup=1;flashimg=1
-/socko                   ext4     /dev/block/by-name/socko                     flags=display=socko;slotselect;backup=1;flashimg=1
-/odmko                   ext4     /dev/block/by-name/odmko                     flags=display=odmko;slotselect;backup=1;flashimg=1
+/socko                   ext4     /dev/block/by-name/socko                     flags=display=socko;slotselect;symlink=/mnt/vendor/socko;backup=1;flashimg=1
+/odmko                   ext4     /dev/block/by-name/odmko                     flags=display=odmko;slotselect;symlink=/mnt/vendor/odmko;backup=1;flashimg=1
 /logo                    emmc     /dev/block/by-name/logo                      flags=display="Bootup logo";backup=1;flashimg=1
 /fbootlogo               emmc     /dev/block/by-name/fbootlogo                 flags=display="Fastboot logo";backup=1;flashimg=1
 # AVB
