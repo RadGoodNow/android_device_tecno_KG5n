@@ -26,7 +26,7 @@ on init
     chmod 0666 /dev/vndbinder
     chmod 0755 /dev/binderfs
     symlink /vendor/firmware /system/etc/firmware
-    setprop persist.sys.usb.config=mpt,adb
+    setprop persist.sys.usb.config mpt,adb
 
 on fs
 # Sensor
