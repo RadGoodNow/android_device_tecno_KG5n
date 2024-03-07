@@ -6,19 +6,18 @@
 /system_ext              ext4     /dev/block/mapper/system_ext                 flags=display="System_ext image";slotselect;backup=1;flashimg=1
 /product                 ext4     /dev/block/mapper/product                    flags=display="Product image";slotselect;backup=1;flashimg=1
 /vendor                  ext4     /dev/block/mapper/vendor                     flags=display="Vendor image";slotselect;backup=1;flashimg=1
-/super                   emmc     /dev/block/by-name/super                     flags=display="Super";backup=1;flashimg=1
 /boot                    emmc     /dev/block/by-name/boot                      flags=display=boot;slotselect;backup=1;flashimg=1
-/dtbo                    emmc     /dev/block/by-name/dtbo                      flags=display=dtbo;slotselect;backup=1;flashimg=1
-/uboot                   emmc     /dev/block/by-name/uboot                     flags=display=uboot;slotselect;backup=1;flashimg=1
-/misc                    emmc     /dev/block/by-name/misc                      flags=display=misc;backup=1;flashimg=1
-/metadata                ext4     /dev/block/by-name/metadata                  flags=display=metadata;backup=1;flashimg=1
+/dtbo                    emmc     /dev/block/by-name/dtbo                      flags=display=dtbo;slotselect;backup=1
+/uboot                   emmc     /dev/block/by-name/uboot                     flags=display=uboot;slotselect;backup=1
+/misc                    emmc     /dev/block/by-name/misc                      flags=display=misc;backup=1
+/metadata                ext4     /dev/block/by-name/metadata                  flags=display=metadata;backup=1
 /data                    f2fs     /dev/block/by-name/userdata
-/mnt/vendor              ext4     /dev/block/by-name/prodnv                    flags=display=prodnv;backup=1;flashimg=1
-/persist                 emmc     /dev/block/by-name/persist                   flags=display=persist;backup=1;flashimg=1
-/socko                   ext4     /dev/block/by-name/socko                     flags=display=socko;slotselect;symlink=/mnt/vendor/socko;backup=1;flashimg=1
-/odmko                   ext4     /dev/block/by-name/odmko                     flags=display=odmko;slotselect;symlink=/mnt/vendor/odmko;backup=1;flashimg=1
-/logo                    emmc     /dev/block/by-name/logo                      flags=display="Bootup logo";backup=1;flashimg=1
-/fbootlogo               emmc     /dev/block/by-name/fbootlogo                 flags=display="Fastboot logo";backup=1;flashimg=1
+/mnt/vendor              ext4     /dev/block/by-name/prodnv                    flags=display=prodnv;backup=1
+/persist                 emmc     /dev/block/by-name/persist                   flags=display=persist;backup=1
+/socko                   ext4     /dev/block/by-name/socko                     flags=display=socko;slotselect;symlink=/mnt/vendor/socko;backup=1
+/odmko                   ext4     /dev/block/by-name/odmko                     flags=display=odmko;slotselect;symlink=/mnt/vendor/odmko;backup=1
+/logo                    emmc     /dev/block/by-name/logo                      flags=display="Bootup logo";backup=1
+/fbootlogo               emmc     /dev/block/by-name/fbootlogo                 flags=display="Fastboot logo";backup=1
 # AVB
 /vbmeta                  emmc     /dev/block/by-name/vbmeta                    flags=display=vbmeta;slotselect;backup=1;flashimg=1
 /vbmeta_system           emmc     /dev/block/by-name/vbmeta_system             flags=display=vbmeta_system;slotselect;backup=1;flashimg=1
