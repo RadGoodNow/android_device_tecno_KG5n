@@ -155,3 +155,6 @@ TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 TW_USE_TOOLBOX := true
 TW_HAS_MTP := true
+
+# Fix reboot to system
+TW_NO_FASTBOOT_BOOT := true
