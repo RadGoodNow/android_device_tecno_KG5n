@@ -164,6 +164,7 @@ on post-fs-data
     chmod 666 /sys/module/shub_core/parameters/prox_firms
     chmod 666 /sys/module/firmware_class/parameters/path
     chmod 666 /sys/module/shub_core/parameters/sensor_fusion_mode
+    start hwservicemanager
 
 on property:ro.debuggable=1
     write /sys/module/smsg/parameters/debug_enable 1
