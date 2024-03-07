@@ -5,6 +5,8 @@ product                                  /product            ext4    ro wait,avb
 
 /dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,noauto_da_alloc wait,first_stage_mount,check
 
+/dev/block/by-name/misc                  /misc               emmc    defaults     defaults
+
 /dev/block/by-name/socko                 /socko              ext4    ro,noatime,nosuid,nodev,noauto_da_alloc wait,latemount,avb=socko,check,slotselect
 /dev/block/by-name/odmko                 /odmko              ext4    ro,noatime,nosuid,nodev,noauto_da_alloc wait,latemount,avb=odmko,check,slotselect
 
