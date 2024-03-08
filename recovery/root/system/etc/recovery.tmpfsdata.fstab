@@ -1,5 +1,3 @@
-/dev/block/by-name/misc                  /misc               emmc    defaults     defaults
-
 /dev/block/by-name/prodnv                /mnt/vendor         ext4    noatime,nosuid,nodev,noauto_da_alloc    wait,check
 /dev/block/by-name/socko                 /socko              ext4    noatime,nosuid,nodev,noauto_da_alloc    wait,check,slotselect
 /dev/block/by-name/odmko                 /odmko              ext4    noatime,nosuid,nodev,noauto_da_alloc    wait,check,slotselect
