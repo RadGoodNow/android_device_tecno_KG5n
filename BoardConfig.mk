@@ -133,6 +133,10 @@ RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/debuggerd
 TARGET_RECOVERY_DEVICE_MODULES += strace
 RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
 
+#SDCARD AND OTG
+BOARD_ROOT_EXTRA_FOLDERS += usb-otg
+BOARD_ROOT_EXTRA_FOLDERS += external_sd
+
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2023-12-28
 VENDOR_SECURITY_PATCH := 2023-12-28
@@ -158,3 +162,5 @@ TW_HAS_MTP := true
 
 # Fix reboot to system
 TW_NO_FASTBOOT_BOOT := true
+
+# unofficialtwrp.com stop stealing our twrp images
