@@ -1,5 +1,5 @@
 # Twrp fstab - RadGoodNow & arturmes
-# For Tecno KG5n
+# For Tecno Spark 8C KG5n
 
 # <mount_point>        <fstype>       <device>              <device2>                                  <flags>
 /system_root             ext4     /dev/block/mapper/system                     flags=display="System";slotselect;backup=1;flashimg=1
@@ -13,7 +13,6 @@
 /metadata                ext4     /dev/block/by-name/metadata                  flags=display=metadata;backup=1
 /data                    f2fs     /dev/block/by-name/userdata
 /mnt/vendor              ext4     /dev/block/by-name/prodnv                    flags=display=prodnv;backup=1
-/persist                 emmc     /dev/block/by-name/persist                   flags=display=persist;backup=1
 /socko                   ext4     /dev/block/by-name/socko                     flags=display=socko;slotselect;backup=1
 /odmko                   ext4     /dev/block/by-name/odmko                     flags=display=odmko;slotselect;backup=1
 /logo                    emmc     /dev/block/by-name/logo                      flags=display="Bootup logo";backup=1
