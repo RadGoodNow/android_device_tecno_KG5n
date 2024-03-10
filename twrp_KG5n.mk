@@ -4,9 +4,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 #INHERIT GSI KEYS
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
-# Virtual A/B OTA
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-
 #INHERIT TWRP
 $(call inherit-product, vendor/twrp/config/common.mk)
 
