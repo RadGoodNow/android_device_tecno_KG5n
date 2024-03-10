@@ -32,4 +32,3 @@ on fs
 # Sensor
     insmod /socko/adaptive-ts.ko
     insmod /socko/mali_kbase.ko
-    insmod /odmko/sunwave_fp.ko
