@@ -7,7 +7,7 @@
 - [x] Working Touch, screen
 - [x] Backup to internal/microSD
 - [x] Restore from internal/microSD
-- [ ] reboot to system
+- [x] reboot to system
 - [x] ADB
 
 Medium checks
