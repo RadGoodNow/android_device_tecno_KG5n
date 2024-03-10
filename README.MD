@@ -41,4 +41,5 @@ Finally, crashes are fixed.
 BTW, unofficialtwrp.com, stop stealing our TWRP images. We have warned you :) 
 and yeah fix your "Contact us" page, we want to talk with you guys.
 
+# Tecno Spark 8C
 ![Tecno Spark 8C KG5n](https://phonesdata.com/files/models/Tecno-Spark-8C-761.jpg)
