@@ -87,12 +87,13 @@ on init
     chmod 660 /sys/bus/iio/devices/iio:device1/trigger/current_trigger
 
     export PATH /sbin:/system/bin:/system/xbin:/system_ext/bin:/vendor/bin:/vendor/xbin
-    export SECONDARY_STORAGE /storage/sdcard0
+    export SECONDARY_STORAGE /external_sd
 
     mkdir /storage
-    mkdir /storage/sdcard1
-    mkdir /storage/sdcard0
-    symlink /storage/sdcard0 /mnt/sdcard
+    # mkdir /storage/sdcard1
+    # mkdir /storage/sdcard0
+    symlink /external_sd /storage/sdcard0
+    symlink /external_sd /mnt/sdcard
     symlink /system/etc/bluetooth /etc/bluetooth
 
     mkdir /systeminfo 0777 system system
@@ -100,12 +101,10 @@ on init
     loglevel 7
 
     chown system root /proc/mdbg/assert
-    # chown system root /proc/mdbg/wdtirq
     chown system root /proc/mdbg/at_cmd
     chown system root /proc/mdbg/loopcheck
 
     chmod 760 /proc/mdbg/assert
-    # chmod 760 /proc/mdbg/wdtirq
     chmod 760 /proc/mdbg/at_cmd
     chmod 760 /proc/mdbg/loopcheck
 
@@ -164,8 +163,6 @@ on post-fs-data
     chmod 666 /sys/module/shub_core/parameters/prox_firms
     chmod 666 /sys/module/firmware_class/parameters/path
     chmod 666 /sys/module/shub_core/parameters/sensor_fusion_mode
-
-    symlink /vendor/etc/vintf /system/etc/vintf
     start hwservicemanager
 
 on property:ro.debuggable=1
@@ -243,8 +240,6 @@ on property:ro.bootmode=cali
     mkdir /data/sprd_ss 0770 system system
     class_start cali
 
-    # ToDo: insmod .../${ro.gpu.name}.ko
-
     chmod 666 /mnt/vendor/tsx.dat
     chmod 666 /mnt/vendor/txdata.txt
 
@@ -281,8 +276,6 @@ on property:ro.bootmode=factorytest
     # Support audio test
     mkdir /data/vendor/local 0751 root root
     mkdir /data/vendor/local/media 0770 audioserver system
-
-    # ToDo: insmod .../${ro.gpu.name}.ko
 
     chmod 666 /mnt/vendor/tsx.dat
     chmod 666 /mnt/vendor/txdata.txt
