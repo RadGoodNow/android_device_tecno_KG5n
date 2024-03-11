@@ -41,5 +41,16 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     fastbootd
 
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-service \
+    android.hardware.gatekeeper@1.0-impl
+
+PRODUCT_PACKAGES += \
+    gatekeeper.default
+
+PRODUCT_PACKAGES += \
+    libtrusty \
+    libteeproduction
+
 PRODUCT_PACKAGES_DEBUG += \
     bootctrl
