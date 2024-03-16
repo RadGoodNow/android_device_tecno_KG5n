@@ -19,13 +19,12 @@ Medium checks
 - [x] backup/restore to/from external (USB-OTG) storage
 - [x] backup/restore to/from adb
 - [ ] decrypt /data
-- [ ] Correct date
+- [x] Correct date
 
 Minor checks
 - [ ] MTP export
 - [x] reboot to bootloader
 - [x] reboot to recovery
-- [x] reboot to fastbootD
 - [x] poweroff
 - [x] battery level
 - [x] temperature
