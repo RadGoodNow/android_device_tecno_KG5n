@@ -83,6 +83,9 @@ on post-fs-data
     chown root system /dev/fscklogs/log
     chmod 0770 /dev/fscklogs/log
 
+# zram
+    start zramie
+
 service ueventd /system/bin/ueventd
     critical
     seclabel u:r:ueventd:s0
@@ -104,6 +107,13 @@ service fastbootd /system/bin/fastbootd
     disabled
     group system
     seclabel u:r:fastbootd:s0
+
+# zram
+service zramie /system/bin/zramie
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
 
 # Restart adbd so it can run as root
 on property:service.adb.root=1
