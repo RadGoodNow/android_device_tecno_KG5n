@@ -3,4 +3,6 @@
 mkswap /dev/block/zram0
 swapon /dev/block/zram0
 
+resetprop ro.zram.mark_idle_delay_mins 60
+
 exit $?
