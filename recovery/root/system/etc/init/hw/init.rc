@@ -85,6 +85,7 @@ on post-fs-data
 
 # zram
     start zramie
+    setprop persist.sys.zram_enabled 1
 
 service ueventd /system/bin/ueventd
     critical
