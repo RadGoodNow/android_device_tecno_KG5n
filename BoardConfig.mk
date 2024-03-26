@@ -116,7 +116,7 @@ BOARD_USES_METADATA_PARTITION := true
 BOARD_ROOT_EXTRA_FOLDERS += metadata
 
 #for cali mode use boot.img
-BOARD_CALIMODE_USE_BOOTIMG := true
+# BOARD_CALIMODE_USE_BOOTIMG := true
 
 # MODULES
 TARGET_RECOVERY_DEVICE_MODULES += \
@@ -148,7 +148,6 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_SUPERSU := true
 TW_EXCLUDE_TWRPAPP := true
 TWRP_INCLUDE_LOGCAT := true
-TW_INCLUDE_FASTBOOTD := true
 TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
@@ -172,6 +171,6 @@ BOARD_ROOT_EXTRA_FOLDERS += external_sd
 TW_HAPTICS_TSPDRV := true
 
 # Fix reboot to system
-TW_NO_FASTBOOT_BOOT := true
+# TW_NO_FASTBOOT_BOOT := true
 
 # unofficialtwrp.com stop stealing our twrp images
