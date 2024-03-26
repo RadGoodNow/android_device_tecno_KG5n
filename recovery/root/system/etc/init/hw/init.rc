@@ -33,10 +33,14 @@ on init
     mkdir /mnt/system
     mkdir /metadata
     mkdir /misc
-    mount tmpfs tmpfs /tmp
 
+    mount tmpfs tmpfs /tmp
     chown root shell /tmp
     chmod 0775 /tmp
+
+    mount tmpfs tmpfs /mnt
+    chown root shell /mnt
+
 
    # write /proc/sys/kernel/panic_on_oops 1
     write /proc/sys/vm/max_map_count 1000000
