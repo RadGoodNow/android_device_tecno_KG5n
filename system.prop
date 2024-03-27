@@ -17,4 +17,4 @@ ro.boot.dynamic_partitions=true
 
 # USB MTP
 ro.sys.usb.bicr=no
-ro.sys.usb.storage.type=mtp
+ro.sys.usb.storage.type=adb,mtp
