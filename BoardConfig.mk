@@ -157,7 +157,10 @@ TW_HAS_NO_RECOVERY_PARTITION := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 RECOVERY_SDCARD_ON_DATA := true
 TW_USE_TOOLBOX := true
-TW_HAS_MTP := true
+
+# MTP
+TW_HAS_ := true
+TW_MTP_DEVICE := /dev/mtp_usb
 
 # Display
 TARGET_SCREEN_DENSITY := 320
