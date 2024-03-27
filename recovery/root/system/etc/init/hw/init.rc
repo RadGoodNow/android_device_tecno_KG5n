@@ -1,4 +1,4 @@
-import /init.recovery.${ro.hardware}.rc
+import /init.recovery.KG5n.rc
 import /init.recovery.usb.rc
 
 on early-init
