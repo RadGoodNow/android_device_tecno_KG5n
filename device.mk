@@ -15,11 +15,11 @@ PRODUCT_TARGET_VNDK_VERSION := 30
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
 
-# VIRTUAL A/b
+# VIRTUAL A/B
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
-#PACKAGES
+# PACKAGES
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service \
@@ -58,7 +58,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctrl.$(PRODUCT_PLATFORM)
-
+    bootctrl
 
 # Hidl Service
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
