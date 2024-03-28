@@ -27,7 +27,7 @@ on init
     chmod 0755 /dev/binderfs
     mount tracefs tracefs /sys/kernel/tracing
     symlink /vendor/firmware /system/etc/firmware
-    setprop persist.sys.usb.config mpt,adb
+    setprop persist.sys.usb.config mtp,adb
 
 # zram
     mkdir /sys/block/zram0
