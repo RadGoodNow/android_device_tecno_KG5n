@@ -11,7 +11,7 @@ service logd /system/bin/logd
     capabilities SYSLOG AUDIT_CONTROL
     priority 10
     seclabel u:r:recovery:s0
-    # writepid /dev/cpuset/system-background/tasks
+    writepid /dev/cpuset/system-background/tasks
 
 on init
     mount_all /system/etc/recovery.tmpfsdata.fstab
@@ -20,11 +20,12 @@ on init
     chmod 755 /system/bin/logd
     start logd
     mkdir /dev/binderfs
-    mount binder binder /dev/binderfs/
+   # mount binder binder /dev/binderfs/
     chmod 0666 /dev/binder
     chmod 0666 /dev/hwbinder
     chmod 0666 /dev/vndbinder
     chmod 0755 /dev/binderfs
+    mount tracefs tracefs /sys/kernel/tracing
     symlink /vendor/firmware /system/etc/firmware
     setprop persist.sys.usb.config mpt,adb
 
@@ -38,3 +39,7 @@ on fs
 # Sensor
     insmod /socko/adaptive-ts.ko
     insmod /socko/mali_kbase.ko
+
+# Mix device-specific information into the entropy pool
+    copy /proc/cmdline /dev/urandom
+    copy /prop.default /dev/urandom
