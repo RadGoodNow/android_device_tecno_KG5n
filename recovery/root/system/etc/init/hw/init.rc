@@ -30,7 +30,6 @@ on init
     mkdir /data
     mkdir /cache
     mkdir /sideload
-    mkdir /mnt/system
     mkdir /metadata
     mkdir /misc
 
@@ -40,6 +39,8 @@ on init
 
     mount tmpfs tmpfs /mnt
     chown root shell /mnt
+    mkdir /mnt/system
+    mkdir /mnt/vendor
 
 
    # write /proc/sys/kernel/panic_on_oops 1
