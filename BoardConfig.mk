@@ -150,7 +150,6 @@ TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 TW_HAS_NO_RECOVERY_PARTITION := true
@@ -176,6 +175,6 @@ BOARD_ROOT_EXTRA_FOLDERS += usb-otg
 BOARD_ROOT_EXTRA_FOLDERS += external_sd
 
 # Vibrator
-TW_HAPTICS_TSPDRV := true
+# TW_HAPTICS_TSPDRV := true
 
 # unofficialtwrp.com stop stealing our twrp images
