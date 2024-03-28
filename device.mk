@@ -38,6 +38,10 @@ PRODUCT_PACKAGES += \
     update_engine_sideload
 
 PRODUCT_PACKAGES += \
+    bootctrl.$(PRODUCT_PLATFORM) \
+    bootctrl.$(PRODUCT_PLATFORM).recovery
+
+PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     fastbootd
 
@@ -57,7 +61,6 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1-impl
 
 PRODUCT_PACKAGES_DEBUG += \
-    bootctrl.$(PRODUCT_PLATFORM)
     bootctrl
 
 # Hidl Service
