@@ -15,6 +15,9 @@ vendor.gatekeeper.disable_spu=true
 # Dynamic Partitions
 ro.boot.dynamic_partitions=true
 
+# FRP property for pst device
+ro.frp.pst=/dev/block/by-name/persist
+
 # USB MTP
 ro.sys.usb.bicr=no
 ro.sys.usb.storage.type=adb,mtp
