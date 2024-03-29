@@ -18,7 +18,6 @@
 /misc                    emmc     /dev/block/by-name/misc                      flags=display=misc;backup=1
 /metadata                ext4     /dev/block/by-name/metadata                  flags=display=metadata;backup=1;wrappedkey
 /data                    f2fs     /dev/block/by-name/userdata                  flags=display=Userdata;fileencryption=aes-256-xts:aes-256-cts:v2
-/mnt/vendor              ext4     /dev/block/by-name/prodnv                    flags=display=prodnv;backup=1
 /socko                   ext4     /dev/block/by-name/socko                     flags=display=socko;slotselect;backup=1
 /odmko                   ext4     /dev/block/by-name/odmko                     flags=display=odmko;slotselect;backup=1
 /logo                    emmc     /dev/block/by-name/logo                      flags=display="Bootup logo";backup=1
