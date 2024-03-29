@@ -22,7 +22,7 @@ Medium checks
 - [x] Correct date
 
 Minor checks
-- [ ] MTP export
+- [x] MTP export
 - [x] reboot to bootloader
 - [x] reboot to recovery
 - [x] poweroff
