@@ -73,7 +73,7 @@ on property:sys.usb.config=none && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/bDeviceProtocol 0
     rm /config/usb_gadget/g1/configs/b.1/f1
     rm /config/usb_gadget/g1/configs/b.1/f2
-    #rmdir /config/usb_gadget/g1/functions/rndis.gs4
+    rmdir /config/usb_gadget/g1/functions/rndis.gs4
     write /sys/devices/platform/mt_usb/saving 0
     setprop sys.usb.state ${sys.usb.config}
 
