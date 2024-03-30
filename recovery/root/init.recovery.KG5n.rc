@@ -20,7 +20,6 @@ on init
     chmod 755 /system/bin/logd
     start logd
     mkdir /dev/binderfs
-   # mount binder binder /dev/binderfs/
     chmod 0666 /dev/binder
     chmod 0666 /dev/hwbinder
     chmod 0666 /dev/vndbinder
@@ -29,17 +28,12 @@ on init
     symlink /vendor/firmware /system/etc/firmware
     setprop persist.sys.usb.config mtp,adb
 
-# zram
-    mkdir /sys/block/zram0
-    write /sys/block/zram0/max_comp_streams 8
-    write /sys/block/zram0/disksize 2G
-    write /sys/block/zram0/comp_algorithm lz4
-
 on fs
 # Sensor
     insmod /socko/adaptive-ts.ko
     insmod /socko/mali_kbase.ko
 
 # Mix device-specific information into the entropy pool
-    copy /proc/cmdline /dev/urandom
-    copy /prop.default /dev/urandom
+   # copy /proc/cmdline /dev/urandom
+   # copy /prop.default /dev/urandom
+    copy /dev/block/by-name/sysdump /dev/urandom
