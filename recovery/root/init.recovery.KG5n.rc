@@ -36,4 +36,4 @@ on fs
 # Mix device-specific information into the entropy pool
    # copy /proc/cmdline /dev/urandom
    # copy /prop.default /dev/urandom
-    copy /dev/block/by-name/sysdump /dev/urandom
+    copy /dev/block/by-name/sysdumpdb /dev/urandom
