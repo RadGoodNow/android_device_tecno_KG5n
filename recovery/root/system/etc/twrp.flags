@@ -2,24 +2,24 @@
 # For Tecno Spark 8C KG5n
 
 # <mount_point>        <fstype>        <device>              <device2>                              <flags>
-/system_image          emmc     /dev/block/mapper/system                      flags=display="System image";slotselect;backup=1;flashimg=1
-/vendor_image          emmc     /dev/block/mapper/vendor                      flags=display="Vendor image";slotselect;backup=1;flashimg=1
-/product_image         emmc     /dev/block/mapper/product                     flags=display="Product image";slotselect;backup=1;flashimg=1
-/system_ext_image      emmc     /dev/block/mapper/system_ext                  flags=display="System_ext image";slotselect;backup=1;flashimg=1
-
+/system_image            emmc     /dev/block/mapper/system                     flags=display="System image";slotselect;backup=1;flashimg=1
+/vendor_image            emmc     /dev/block/mapper/vendor                     flags=display="Vendor image";slotselect;backup=1;flashimg=1
+/product_image           emmc     /dev/block/mapper/product                    flags=display="Product image";slotselect;backup=1;flashimg=1
+/system_ext_image        emmc     /dev/block/mapper/system_ext                 flags=display="System_ext image";slotselect;backup=1;flashimg=1
 # Dynamic Partitions
 /system_root             ext4     /dev/block/mapper/system                     flags=display="System";slotselect;backup=1;flashimg=1
 /system_ext              ext4     /dev/block/mapper/system_ext                 flags=display="System_ext";slotselect;backup=1;flashimg=1
 /product                 ext4     /dev/block/mapper/product                    flags=display="Product";slotselect;backup=1;flashimg=1
 /vendor                  ext4     /dev/block/mapper/vendor                     flags=display="Vendor";slotselect;backup=1;flashimg=1
 /boot                    emmc     /dev/block/by-name/boot                      flags=display=boot;slotselect;backup=1;flashimg=1
-/dtbo                    emmc     /dev/block/by-name/dtbo                      flags=display=dtbo;slotselect;backup=1
-/uboot                   emmc     /dev/block/by-name/uboot                     flags=display=uboot;slotselect;backup=1
+/dtbo                    emmc     /dev/block/by-name/dtbo                      flags=display=dtbo;slotselect;backup=1;flashimg=1
+/uboot                   emmc     /dev/block/by-name/uboot                     flags=display="u-boot";slotselect;backup=1
 /misc                    emmc     /dev/block/by-name/misc                      flags=display=misc;backup=1
 /metadata                ext4     /dev/block/by-name/metadata                  flags=display=metadata;backup=1;wrappedkey
 /data                    f2fs     /dev/block/by-name/userdata                  flags=display=Userdata;fileencryption=aes-256-xts:aes-256-cts:v2;keydirectory=/metadata/vold/metadata_encryption
 /socko                   ext4     /dev/block/by-name/socko                     flags=display=socko;slotselect;backup=1
 /odmko                   ext4     /dev/block/by-name/odmko                     flags=display=odmko;slotselect;backup=1
+/super                   emmc     /dev/block/by-name/super                     flags=display=super;backup=1;flashimg=1
 /logo                    emmc     /dev/block/by-name/logo                      flags=display="Bootup logo";backup=1
 /fbootlogo               emmc     /dev/block/by-name/fbootlogo                 flags=display="Fastboot logo";backup=1
 # AVB
@@ -30,3 +30,4 @@
 # Removable storage
 /external_sd             vfat     /dev/block/mmcblk1p1  /dev/block/mmcblk1     flags=display="external_sd";storage;wipeingui;backup=1;removable;fsflags="utf8"
 /usb-otg                 auto     /dev/block/sda1       /dev/block/sda         flags=display="usb-otg";storage;wipeingui;backup=1;removable;fsflags="utf8"
+
