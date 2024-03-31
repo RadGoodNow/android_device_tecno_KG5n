@@ -17,7 +17,7 @@
 /uboot                   emmc     /dev/block/by-name/uboot                     flags=display=uboot;slotselect;backup=1
 /misc                    emmc     /dev/block/by-name/misc                      flags=display=misc;backup=1
 /metadata                ext4     /dev/block/by-name/metadata                  flags=display=metadata;backup=1;wrappedkey
-/data                    f2fs     /dev/block/by-name/userdata                  flags=display=Userdata;fileencryption=aes-256-xts:aes-256-cts:v2
+/data                    f2fs     /dev/block/by-name/userdata                  flags=display=Userdata;fileencryption=aes-256-xts:aes-256-cts:v2;keydirectory=/metadata/vold/metadata_encryption
 /socko                   ext4     /dev/block/by-name/socko                     flags=display=socko;slotselect;backup=1
 /odmko                   ext4     /dev/block/by-name/odmko                     flags=display=odmko;slotselect;backup=1
 /logo                    emmc     /dev/block/by-name/logo                      flags=display="Bootup logo";backup=1
@@ -29,4 +29,4 @@
 /vbmeta_product          emmc     /dev/block/by-name/vbmeta_product            flags=display=vbmeta-product;slotselect;backup=1;flashimg=1
 # Removable storage
 /external_sd             vfat     /dev/block/mmcblk1p1  /dev/block/mmcblk1     flags=display="external_sd";storage;wipeingui;backup=1;removable;fsflags="utf8"
-/usb-otg                 vfat     /dev/block/sda1       /dev/block/sda         flags=display="usb-otg";storage;wipeingui;backup=1;removable;fsflags="utf8"
+/usb-otg                 auto     /dev/block/sda1       /dev/block/sda         flags=display="usb-otg";storage;wipeingui;backup=1;removable;fsflags="utf8"
