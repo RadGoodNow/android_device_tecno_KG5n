@@ -5,7 +5,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 #INHERIT TWRP
-$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, vendor/pb/config/common.mk)
 
 #INHERIT FROM THIS DEVICE TREE
 $(call inherit-product, device/tecno/KG5n/device.mk)
