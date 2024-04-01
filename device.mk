@@ -19,6 +19,10 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
+# Resolution
+TARGET_SCREEN_HEIGHT := 1612
+TARGET_SCREEN_WIDTH := 720
+
 # PACKAGES
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
