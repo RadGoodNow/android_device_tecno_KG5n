@@ -32,6 +32,9 @@ on fs
 # Sensor
     insmod /socko/adaptive-ts.ko
     insmod /socko/mali_kbase.ko
+# Torch
+    insmod /socko/sprd_flash_drv.ko
+    insmod /socko/flash_ic_ocp8137.ko
 
 # Mix device-specific information into the entropy pool
    # copy /proc/cmdline /dev/urandom
