@@ -172,6 +172,9 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_SCREEN_BLANK := true
 TW_THEME := portrait_hdpi
 
+# Fix fastboot reboot
+TW_NO_FASTBOOT_BOOT := true
+
 # Debug
 TWRP_EVENT_LOGGING := true
 TWRP_INCLUDE_LOGCAT := true
