@@ -35,6 +35,7 @@ Minor checks
 - [ ] vibrate
 - [x] screenshot
 - [x] partition SD card
+- [ ] torch on/off
 
 Finally, crashes are fixed.
 
