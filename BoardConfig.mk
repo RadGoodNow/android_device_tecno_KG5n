@@ -184,4 +184,9 @@ BOARD_ROOT_EXTRA_FOLDERS += external_sd
 # Vibrator
 # TW_HAPTICS_TSPDRV := true
 
+# PBRP_FLAGS
+PB_TORCH_PATH := "/sys/devices/virtual/torch/torch/torch_level"
+PB_TORCH_MAX_BRIGHTNESS := 1
+PB_DISABLE_DEFAULT_DM_VERITY := true
+
 # unofficialtwrp.com stop stealing our twrp images
