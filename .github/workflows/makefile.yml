@@ -36,7 +36,7 @@ on:
       MAKEFILE_NAME:
         description: 'MAKEFILE_NAME'
         required: true
-        default: 'twrp_KG5n'
+        default: 'pbrp_KG5n'
       BUILD_TARGET:
         description: 'BUILD_TARGET'
         required: true
