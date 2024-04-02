@@ -60,12 +60,5 @@ PRODUCT_PACKAGES += \
     libtrusty \
     libteeproduction
 
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1-service \
-    android.hardware.keymaster@4.1-impl
-
 PRODUCT_PACKAGES_DEBUG += \
     bootctrl
-
-# Hidl Service
-PRODUCT_ENFORCE_VINTF_MANIFEST := true
