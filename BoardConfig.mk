@@ -49,7 +49,7 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
-TW_USE_FSCRYPT_POLICY := 1
+TW_USE_FSCRYPT_POLICY := 2
 
 # TEMP
 TW_CUSTOM_CPU_TEMP_PATH = /sys/devices/platform/soc/soc:aon/64200000.spi/spi_master/spi4/spi4.0/sc27xx-fgu/power_supply/sc27xx-fgu/temp
@@ -118,7 +118,7 @@ BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 # SYSTEM-AS-ROOT
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
-BOARD_ROOT_EXTRA_FOLDERS := bluetooth dsp firmware persist
+BOARD_ROOT_EXTRA_FOLDERS := bluetooth dsp firmware persist socko odmko
 
 # METADATA
 BOARD_USES_METADATA_PARTITION := true
@@ -187,8 +187,7 @@ TARGET_RECOVERY_DEVICE_MODULES += strace
 RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
 
 # SDCARD AND OTG
-BOARD_ROOT_EXTRA_FOLDERS += usb-otg
-BOARD_ROOT_EXTRA_FOLDERS += external_sd
+BOARD_ROOT_EXTRA_FOLDERS := usb-otg external_sd
 
 # Vibrator
 # TW_HAPTICS_TSPDRV := true
@@ -196,7 +195,7 @@ BOARD_ROOT_EXTRA_FOLDERS += external_sd
 # PBRP_FLAGS
 PB_TORCH_PATH := "/sys/class/torch/torch/torch_level"
 PB_TORCH_MAX_BRIGHTNESS := 1
-PB_DISABLE_DEFAULT_TREBLE_COMP := true
+# PB_DISABLE_DEFAULT_TREBLE_COMP := true
 PB_DISABLE_DEFAULT_DM_VERITY := true
 
 # unofficialtwrp.com stop stealing our twrp images
