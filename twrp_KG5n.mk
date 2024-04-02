@@ -12,7 +12,7 @@ $(call inherit-product, device/tecno/KG5n/device.mk)
 
 PRODUCT_DEVICE := KG5n
 PRODUCT_NAME := twrp_KG5n
-PRODUCT_BRAND := tecno
+PRODUCT_BRAND := Tecno
 PRODUCT_MODEL := Spark 8C
 PRODUCT_MANUFACTURER := Tecno Mobility Limited
 PRODUCT_RELEASE_NAME := Tecno Spark 8C
