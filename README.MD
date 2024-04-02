@@ -1,4 +1,4 @@
-# Twrp Recovery Tree for Tecno Spark 8C KG5n
+# PBRP Recovery Tree for Tecno Spark 8C KG5n
 
  created by RadGoodNow and arturmes
 
@@ -40,7 +40,7 @@ Minor checks
 Finally, crashes are fixed.
 
 # Tecno Spark 8C
-![Tecno Spark 8C KG5n](https://phonesdata.com/files/models/Tecno-Spark-8C-761.jpg)
+![Tecno Spark 8C](https://phonesdata.com/files/models/Tecno-Spark-8C-761.jpg)
 
 BTW, unofficialtwrp.com, stop stealing our TWRP images. We have warned you :) 
 and yeah fix your "Contact us" page, we want to talk with you guys.
