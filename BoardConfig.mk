@@ -65,6 +65,7 @@ endif
 
 # PLATFORM
 TARGET_BOARD_PLATFORM := ums9230
+TARGET_BOARD_PLATFORM_GPU := mali-g57
 PRODUCT_PLATFORM := ums9230
 
 # A/B
@@ -126,15 +127,17 @@ BOARD_ROOT_EXTRA_FOLDERS += metadata
 
 # MODULES
 TARGET_RECOVERY_DEVICE_MODULES += \
-    libkeymaster4 \
     libkeymaster41 \
-    libpuresoftkeymasterdevice
+    libpuresoftkeymasterdevice \
+    ashmemd_aidl_interface-cpp \
+    libashmemd_client
 
 # LIBRARIES
 RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 	
 # VERSION
 TW_DEVICE_VERSION:=RadGoodNow@4pda and artumes@4pda
@@ -154,6 +157,7 @@ TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_FASTBOOTD := true
+TW_USE_LEDS_HAPTICS := true
 TW_USE_TOOLBOX := true
 
 # Recovery
@@ -164,6 +168,13 @@ TW_HAS_NO_RECOVERY_PARTITION := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 RECOVERY_SDCARD_ON_DATA := true
+
+# Flag added by me but not in official TWRP sources
+# Will be submitted to gerrit
+#
+# Disables "Reflash TWRP after flashing a ROM" option (in both settings and zip install menu)
+# This **causes** AVB errors when reflashing MIUI
+TW_NO_AUTOREFLASH := true
 
 # MTP
 TW_HAS_MTP := true
