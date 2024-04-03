@@ -149,7 +149,6 @@ TW_EXCLUDE_APEX := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_SUPERSU := true
 TW_EXCLUDE_TWRPAPP := true
-TW_EXCLUDE_LPTOOLS := true
 TW_INCLUDE_NANO := true
 TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_RESETPROP := true
@@ -193,14 +192,9 @@ RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
 # SDCARD AND OTG
 BOARD_ROOT_EXTRA_FOLDERS := usb-otg external_sd
 
-# Vibratar
-# TW_HAPTICS_TSPDRV := true
-# TW_SUPPORT_INPUT_1_2_HAPTICS := true
-
 # PBRP_FLAGS
 PB_TORCH_PATH := "/sys/class/torch/torch/torch_level"
 PB_TORCH_MAX_BRIGHTNESS := 1
-# PB_DISABLE_DEFAULT_TREBLE_COMP := true
 PB_DISABLE_DEFAULT_DM_VERITY := true
 
 # unofficialtwrp.com stop stealing our twrp images
