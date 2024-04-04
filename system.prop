@@ -14,6 +14,10 @@ vendor.gatekeeper.disable_spu=true
 
 # Dynamic Partitions
 ro.boot.dynamic_partitions=true
+ro.boot.dynamic_partitions_retrofit=true
+
+# Fastbootd
+ro.fastbootd.available=true
 
 # FRP property for pst device
 ro.frp.pst=/dev/block/by-name/persist
