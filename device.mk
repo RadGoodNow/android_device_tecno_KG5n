@@ -27,7 +27,7 @@ TARGET_SCREEN_WIDTH := 720
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service \
-    libhealthd.$(PRODUCT_PLATFORM)
+    libhealthd.ums9230
 
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl \
@@ -42,23 +42,12 @@ PRODUCT_PACKAGES += \
     update_engine_sideload
 
 PRODUCT_PACKAGES += \
-    bootctrl.$(PRODUCT_PLATFORM) \
-    bootctrl.$(PRODUCT_PLATFORM).recovery
+    bootctrl.ums9230 \
+    bootctrl.ums9230.recovery
 
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     fastbootd
-
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-service \
-    android.hardware.gatekeeper@1.0-impl
-
-PRODUCT_PACKAGES += \
-    gatekeeper.default
-
-PRODUCT_PACKAGES += \
-    libtrusty \
-    libteeproduction
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctrl
