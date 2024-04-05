@@ -16,7 +16,7 @@ Medium checks
 - [x] Screen goes off and on
 - [x] F2FS/EXT4 Support, exFAT/NTFS where supported
 - [x] all important partitions listed in mount/backup lists
-- [ ] backup/restore to/from external (USB-OTG) storage
+- [x] backup/restore to/from external (USB-OTG) storage
 - [x] backup/restore to/from adb
 - [ ] decrypt /data
 - [x] Correct date
@@ -30,7 +30,7 @@ Minor checks
 - [x] temperature
 - [ ] encrypted backups
 - [x] input devices via USB (USB-OTG) - keyboard, mouse and disks
-- [ ] USB mass storage export
+- [x] USB mass storage export
 - [x] set brightness
 - [ ] vibrate
 - [x] screenshot
