@@ -114,6 +114,7 @@ BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 # SYSTEM-AS-ROOT
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
+BOARD_ROOT_EXTRA_FOLDERS := socko odmko
 
 # METADATA
 BOARD_USES_METADATA_PARTITION := true
@@ -121,44 +122,44 @@ BOARD_ROOT_EXTRA_FOLDERS += metadata
 
 # MODULES
 TARGET_RECOVERY_DEVICE_MODULES += \
-    libkeymaster4 \
     libkeymaster41 \
-    libpuresoftkeymasterdevice
+    libpuresoftkeymasterdevice \
+    ashmemd_aidl_interface-cpp \
+    libashmemd_client
 
 # LIBRARIES
 RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 	
 # VERSION
 TW_DEVICE_VERSION:=RadGoodNow@4pda and artumes@4pda
-TARGET_RECOVERY_DEVICE_MODULES += debuggerd
-RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/debuggerd
-TARGET_RECOVERY_DEVICE_MODULES += strace
-RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2024-01-03
 VENDOR_SECURITY_PATCH := 2023-12-28
 PLATFORM_VERSION := 97.0.1
 
-# RECOVERY
+# Available tools
 TW_EXCLUDE_APEX := true
-TW_EXCLUDE_PYTHON := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_SUPERSU := true
 TW_EXCLUDE_TWRPAPP := true
+TW_INCLUDE_LPTOOLS := true
 TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
+TW_USE_TOOLBOX := true
+
+# Recovery
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 TW_HAS_NO_RECOVERY_PARTITION := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 RECOVERY_SDCARD_ON_DATA := true
-TW_USE_TOOLBOX := true
 
 # MTP
 TW_HAS_MTP := true
@@ -172,19 +173,17 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_SCREEN_BLANK := true
 TW_THEME := portrait_hdpi
 
-# Fix fastboot reboot
-TW_NO_FASTBOOT_BOOT := true
-
 # Debug
 TWRP_EVENT_LOGGING := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+TARGET_RECOVERY_DEVICE_MODULES += debuggerd
+RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/debuggerd
+TARGET_RECOVERY_DEVICE_MODULES += strace
+RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
 
 # SDCARD AND OTG
 BOARD_ROOT_EXTRA_FOLDERS += usb-otg
 BOARD_ROOT_EXTRA_FOLDERS += external_sd
-
-# Vibrator
-# TW_HAPTICS_TSPDRV := true
 
 # unofficialtwrp.com stop stealing our twrp images
