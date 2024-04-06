@@ -22,12 +22,6 @@
 /data                    f2fs     /dev/block/by-name/userdata                  flags=fileencryption=aes-256-xts:aes-256-cts:v2;keydirectory=/metadata/vold/metadata_encryption
 /socko                   ext4     /dev/block/by-name/socko                     flags=display=socko;slotselect;backup=1
 /odmko                   ext4     /dev/block/by-name/odmko                     flags=display=odmko;slotselect;backup=1
-# Fun
-/uboot_log               emmc     /dev/block/by-name/uboot_log                 flags=display="u-boot log";backup=1;flashimg=1
-/cache                   ext4     /dev/block/by-name/cache                     flags=display=Cache;wipeingui;backup=1;flashimg=1
-/pm_sys                  emmc     /dev/block/by-name/pm_sys                    flags=display="Power Management";slotselect;backup=1
-/fbootlogo               emmc     /dev/block/by-name/fbootlogo                 flags=display="Fastboot logo";backup=1;flashimg=1
-/logo                    emmc     /dev/block/by-name/logo                      flags=display="Bootup logo";backup=1;flashimg=1
 # AVB
 /vbmeta                  emmc     /dev/block/by-name/vbmeta                    flags=display=vbmeta;slotselect;backup=1;flashimg=1
 /vbmeta_system           emmc     /dev/block/by-name/vbmeta_system             flags=display=vbmeta-system;slotselect;backup=1;flashimg=1
@@ -37,3 +31,18 @@
 # Removable storage
 /external_sd             vfat     /dev/block/mmcblk1p1  /dev/block/mmcblk1     flags=display="external_sd";storage;wipeingui;backup=1;removable;fsflags="utf8"
 /usb-otg                 auto     /dev/block/sda1       /dev/block/sda         flags=display="usb-otg";storage;wipeingui;backup=1;removable
+
+# Other partitions
+/spl                     emmc     /dev/block/mmcblk0boot0                      flags=display=spl;backup=1
+/spl_bk                  emmc     /dev/block/mmcblk0boot1                      flags=display=spl_bk;backup=1
+/sml                     emmc     /dev/block/by-name/sml                       flags=display=sml;backup=1
+/tos                     emmc     /dev/block/by-name/trustos                   flags=display=tos;backup=1
+/teecfg                  emmc     /dev/block/by-name/teecfg                    flags=display=teecfg;backup=1
+/ltefixnv1               emmc     /dev/block/by-name/l_fixnv1                  flags=display=ltefixnv1;backup=1
+/ltefixnv2               emmc     /dev/block/by-name/l_fixnv2                  flags=display=ltefixnv2;backup=1
+/deltanv                 emmc     /dev/block/by-name/l_deltanv                 flags=display=deltanv;backup=1
+/cache                   ext4     /dev/block/by-name/cache                     flags=display=cache;wipeingui;backup=1
+/pmsys                   emmc     /dev/block/by-name/pm_sys                    flags=display=pmsys;slotselect;backup=1
+/qogirl6_m3l_cm4         emmc     /dev/block/by-name/pm_sys                    flags=display=qogirl6_m3l_cm4;slotselect
+/fbootlogo               emmc     /dev/block/by-name/fbootlogo                 flags=display="Fastboot logo";backup=1;flashimg=1
+/logo                    emmc     /dev/block/by-name/logo                      flags=display="Bootup logo";backup=1;flashimg=1
