@@ -34,6 +34,8 @@ on fs
     insmod /socko/adaptive-ts.ko
 # Torch
     insmod /socko/sprd_flash_drv.ko
+    insmod /socko/flash_ic_ocp8137.ko
+    chown system system /sys/devices/virtual/torch/torch/torch_level
 
 # Mix device-specific information into the entropy pool
     copy /dev/block/by-name/sysdumpdb /dev/urandom
