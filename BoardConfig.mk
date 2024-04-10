@@ -24,6 +24,7 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
+TARGET_BOOTLOADER_BOARD_NAME := KG5n
 TARGET_USES_UEFI := true
 
 # MKBOOT
@@ -46,6 +47,11 @@ TARGET_OTA_ASSERT_DEVICE := TECNO-KG5n,TECNO-KG5k,KG5n,KG5k,kg5n,kg5k
 
 # CRYPTO STUFF
 # TW_INCLUDE_CRYPTO := true
+# TW_INCLUDE_CRYPTO := true
+# TW_CRYPTO_FS_TYPE := "ext4"
+# TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/userdata"
+# TW_CRYPTO_MNT_POINT := "/data"
+# TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,discard,inline_data,inline_xattr,data=ordered"
 # TW_INCLUDE_CRYPTO_FBE := true
 # TW_INCLUDE_FBE_METADATA_DECRYPT := true
 # BOARD_USES_QCOM_FBE_DECRYPTION := true
@@ -123,6 +129,7 @@ BOARD_ROOT_EXTRA_FOLDERS := socko odmko
 
 # METADATA
 BOARD_USES_METADATA_PARTITION := true
+BOARD_CHARGER_SHOW_PERCENTAGE := true
 BOARD_ROOT_EXTRA_FOLDERS += metadata
 
 # MODULES
@@ -164,7 +171,9 @@ BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 TW_HAS_NO_RECOVERY_PARTITION := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/twrp.flags
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage/lun%d/file
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun%d/file
 RECOVERY_SDCARD_ON_DATA := true
 
 # Flag added by me but not in official TWRP sources
