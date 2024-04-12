@@ -49,7 +49,7 @@ TARGET_OTA_ASSERT_DEVICE := TECNO-KG5n,TECNO-KG5k,KG5n,KG5k,kg5n,kg5k
 # TW_INCLUDE_CRYPTO := true
 # TW_INCLUDE_CRYPTO := true
 # TW_CRYPTO_FS_TYPE := "ext4"
-# TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/userdata"
+# TW_CRYPTO_REAL_BLKDEV := "/dev/block/by-name/userdata"
 # TW_CRYPTO_MNT_POINT := "/data"
 # TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,discard,inline_data,inline_xattr,data=ordered"
 # TW_INCLUDE_CRYPTO_FBE := true
@@ -174,7 +174,7 @@ BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := true
 TW_HAS_NO_RECOVERY_PARTITION := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/twrp.flags
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage/lun%d/file
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun%d/file
 RECOVERY_SDCARD_ON_DATA := true
