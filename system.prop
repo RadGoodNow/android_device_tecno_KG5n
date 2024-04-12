@@ -1,23 +1,23 @@
 # Decrypt fs
 ro.hardware=KG5n
-ro.hardware.kmsetkey=trustonic
-ro.crypto.volume.filenames_mode=aes-256-cts
-ro.crypto.metadata.enabled=true
-ro.crypto.support_metadata_encrypt=true
-ro.crypto.uses_fs_ioc_add_encryption_key=true
-fbe.metadata.wrappedkey=true
-ro.crypto.allow_encrypt_override=true
-ro.crypto.dm_default_key.options_format.version=2
-ro.crypto.volume.metadata.method=dm-default-key
-ro.crypto.volume.options=::v2
-vendor.gatekeeper.disable_spu=true
+# ro.hardware.kmsetkey=trustonic
+# ro.crypto.volume.filenames_mode=aes-256-cts
+# ro.crypto.metadata.enabled=true
+# ro.crypto.support_metadata_encrypt=true
+# ro.crypto.uses_fs_ioc_add_encryption_key=true
+# fbe.metadata.wrappedkey=true
+# ro.crypto.allow_encrypt_override=true
+# ro.crypto.dm_default_key.options_format.version=2
+# ro.crypto.volume.metadata.method=dm-default-key
+# ro.crypto.volume.options=::v2
+# vendor.gatekeeper.disable_spu=true
 
 # Dynamic Partitions
 ro.boot.dynamic_partitions=true
 ro.boot.dynamic_partitions_retrofit=true
 
 # Fastbootd
-ro.fastbootd.available=true
+# ro.fastbootd.available=true
 
 # FRP property for pst device
 ro.frp.pst=/dev/block/by-name/persist
