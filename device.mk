@@ -27,7 +27,7 @@ TARGET_SCREEN_WIDTH := 720
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service \
-    libhealthd.ums9230
+    libhealthd
 
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl \
@@ -40,10 +40,6 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
-
-PRODUCT_PACKAGES += \
-    bootctrl.ums9230 \
-    bootctrl.ums9230.recovery
 
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
