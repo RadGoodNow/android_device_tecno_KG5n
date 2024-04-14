@@ -42,16 +42,8 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 TARGET_KERNEL_CONFIG := TECNO-KG5n_defconfig
 TARGET_KERNEL_SOURCE := kernel/tecno/TECNO-KG5n
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := TECNO-KG5n,TECNO-KG5k,KG5n,KG5k,kg5n,kg5k
-
 # CRYPTO STUFF
 # TW_INCLUDE_CRYPTO := true
-# TW_INCLUDE_CRYPTO := true
-# TW_CRYPTO_FS_TYPE := "ext4"
-# TW_CRYPTO_REAL_BLKDEV := "/dev/block/by-name/userdata"
-# TW_CRYPTO_MNT_POINT := "/data"
-# TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,discard,inline_data,inline_xattr,data=ordered"
 # TW_INCLUDE_CRYPTO_FBE := true
 # TW_INCLUDE_FBE_METADATA_DECRYPT := true
 # BOARD_USES_QCOM_FBE_DECRYPTION := true
@@ -82,6 +74,7 @@ AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     vbmeta \
     vbmeta_system \
+    vbmeta_system_ext \
     vbmeta_product \
     vbmeta_vendor \
     dtbo \
@@ -89,7 +82,8 @@ AB_OTA_PARTITIONS += \
     system \
     system_ext \
     vendor \
-    product
+    product \
+    odmko
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -175,8 +169,8 @@ TARGET_NO_RECOVERY := true
 TW_HAS_NO_RECOVERY_PARTITION := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage/lun%d/file
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun%d/file
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage/lun.%d/file
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 RECOVERY_SDCARD_ON_DATA := true
 
 # Flag added by me but not in official TWRP sources
@@ -192,7 +186,7 @@ TW_MTP_DEVICE := /dev/mtp_usb
 
 # Display
 TW_FRAMERATE := 90
-# TARGET_SCREEN_DENSITY := 320
+TARGET_SCREEN_DENSITY := 320
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_SCREEN_BLANK := true
