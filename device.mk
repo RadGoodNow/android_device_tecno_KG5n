@@ -15,6 +15,8 @@ PRODUCT_TARGET_VNDK_VERSION := 30
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+PRODUCT_PLATFORM := ums9230
+
 # VIRTUAL A/B
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
@@ -38,27 +40,8 @@ PRODUCT_PACKAGES += \
     update_engine_sideload
 
 PRODUCT_PACKAGES += \
-    bootctrl.$(PRODUCT_PLATFORM) \
-    bootctrl.$(PRODUCT_PLATFORM).recovery
-
-PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     fastbootd
-
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-service \
-    android.hardware.gatekeeper@1.0-impl
-
-PRODUCT_PACKAGES += \
-    gatekeeper.default
-
-PRODUCT_PACKAGES += \
-    libtrusty \
-    libteeproduction
-
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1-service \
-    android.hardware.keymaster@4.1-impl
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctrl
