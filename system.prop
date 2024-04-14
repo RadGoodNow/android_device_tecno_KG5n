@@ -1,20 +1,9 @@
-# Decrypt fs
 ro.hardware=KG5n
+ro.treble.enabled=true
+ro.board.platform=ums9230
+ro.rebootescrow.device=/dev/block/pmem0
 ro.hardware.kmsetkey=trustonic
-ro.crypto.volume.filenames_mode=aes-256-cts
-ro.crypto.metadata.enabled=true
-ro.crypto.support_metadata_encrypt=true
-ro.crypto.uses_fs_ioc_add_encryption_key=true
-fbe.metadata.wrappedkey=true
-ro.crypto.allow_encrypt_override=true
-ro.crypto.dm_default_key.options_format.version=2
-ro.crypto.volume.metadata.method=dm-default-key
-ro.crypto.volume.options=::v2
-vendor.gatekeeper.disable_spu=true
+ro.sys.usb.storage.type=adb,mtp
 
 # FRP property for pst device
 ro.frp.pst=/dev/block/by-name/persist
-
-# USB MTP
-ro.sys.usb.bicr=no
-ro.sys.usb.storage.type=adb,mtp
