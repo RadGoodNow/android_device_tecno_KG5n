@@ -23,11 +23,31 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 TARGET_SCREEN_HEIGHT := 1612
 TARGET_SCREEN_WIDTH := 720
 
+# f2fs utilities
+PRODUCT_PACKAGES += \
+    sg_write_buffer \
+    f2fs_io \
+    check_f2fs
+    
+# Userdata checkpoint
+PRODUCT_PACKAGES += \
+    checkpoint_gc
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_vendor=true \
+    POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
+    FILESYSTEM_TYPE_vendor=ext4 \
+    POSTINSTALL_OPTIONAL_vendor=true
+
 # PACKAGES
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service \
-    libhealthd
+
+# bootctrl HAL    
+PRODUCT_PACKAGES += \
+    bootctrl.unisoc \
+    bootctrl.ums9230.recovery
 
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl \
@@ -39,11 +59,13 @@ PRODUCT_PACKAGES += \
     cppreopts.sh \
     update_engine \
     update_verifier \
-    update_engine_sideload
+    update_engine_sideload \
+    checkpoint_gc 
 
 PRODUCT_PACKAGES += \
+    fastbootd \
     android.hardware.fastboot@1.0-impl-mock \
-    fastbootd
+    android.hardware.fastboot@1.0-impl-mock.recovery
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctrl
