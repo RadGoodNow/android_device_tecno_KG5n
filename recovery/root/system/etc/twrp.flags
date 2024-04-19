@@ -15,9 +15,7 @@
 /odmko                   ext4     /dev/block/by-name/odmko                     flags=display=odmko;slotselect;backup=1
 /boot                    emmc     /dev/block/by-name/boot                      flags=display=boot;slotselect;backup=1;flashimg=1
 /dtbo                    emmc     /dev/block/by-name/dtbo                      flags=display=dtbo;slotselect;backup=1;flashimg=1
-/dtb                     emmc     /dev/block/by-name/dtb                       flags=display=dtb;slotselect;backup=1;flashimg=1
 /misc                    emmc     /dev/block/by-name/misc                      flags=display=misc;backup=1
-/miscdata                emmc     /dev/block/by-name/miscdata                  flags=display=miscdata;backup=1
 /uboot                   emmc     /dev/block/by-name/uboot                     flags=display="u-boot";slotselect;backup=1
 # AVB
 /vbmeta                  emmc     /dev/block/by-name/vbmeta                    flags=display=vbmeta;slotselect;backup=1;flashimg=1
@@ -43,4 +41,4 @@
 /pmsys                   emmc     /dev/block/by-name/pm_sys                    flags=display=pmsys;slotselect;backup=1
 /qogirl6_m3l_cm4         emmc     /dev/block/by-name/pm_sys                    flags=display=qogirl6_m3l_cm4;slotselect
 /fbootlogo               emmc     /dev/block/by-name/fbootlogo                 flags=display="Fastboot logo";backup=1;flashimg=1
-/logo                    emmc     /dev/block/by-name/logo                      flags=display="Bootup logo";backup=1;flashimg=1
+/logo                    emmc     /dev/block/by-name/logo                      flags=display="Bootup logo";backup=1
