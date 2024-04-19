@@ -17,7 +17,6 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 
 # VIRTUAL A/B
 ENABLE_VIRTUAL_AB := true
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 # Resolution
 TARGET_SCREEN_HEIGHT := 1612
@@ -43,6 +42,8 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service \
+    android.hardware.health@2.1-impl.recovery \
+    libhealtd.ums9230
 
 # bootctrl HAL    
 PRODUCT_PACKAGES += \
