@@ -22,8 +22,12 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
+# 64-bit
+TARGET_SUPPORTS_64_BIT_APPS := true
+TARGET_IS_64_BIT := true
+
 # Bootloader
-TARGET_NO_BOOTLOADER := true
+TARGET_NO_BOOTLOADER := false
 TARGET_BOOTLOADER_BOARD_NAME := KG5n
 TARGET_USES_UEFI := true
 
@@ -43,11 +47,11 @@ TARGET_KERNEL_CONFIG := TECNO-KG5n_defconfig
 TARGET_KERNEL_SOURCE := kernel/tecno/TECNO-KG5n
 
 # CRYPTO STUFF
-# TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO := true
 # TW_INCLUDE_CRYPTO_FBE := true
 # TW_INCLUDE_FBE_METADATA_DECRYPT := true
-# BOARD_USES_QCOM_FBE_DECRYPTION := true
-# TW_USE_FSCRYPT_POLICY := 2
+BOARD_USES_QCOM_FBE_DECRYPTION := true
+TW_USE_FSCRYPT_POLICY := 1
 
 # TEMP
 TW_CUSTOM_CPU_TEMP_PATH = /sys/devices/platform/soc/soc:aon/64200000.spi/spi_master/spi4/spi4.0/sc27xx-fgu/power_supply/sc27xx-fgu/temp
@@ -90,9 +94,9 @@ BOARD_AVB_ENABLE := true
 BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 3
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 2
 BOARD_AVB_BOOT_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
-BOARD_AVB_BOOT_ROLLBACK_INDEX_LOCATION := 3
+BOARD_AVB_BOOT_ROLLBACK_INDEX_LOCATION := 2
 
 # SUPER PARTITION
 BOARD_SUPER_PARTITION_GROUPS := unisoc_a unisoc_b
@@ -113,6 +117,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 # FILESYSTEMS
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_EXT4_SHARE_DUP_BLOCKS := true
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -172,12 +177,15 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage/lun.%d/file
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 RECOVERY_SDCARD_ON_DATA := true
+TW_USE_EXTERNAL_STORAGE := true
+TW_NO_LEGACY_PROPS := true
+TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
 
 # Flag added by me but not in official TWRP sources
 # Will be submitted to gerrit
 #
 # Disables "Reflash TWRP after flashing a ROM" option (in both settings and zip install menu)
-# This **causes** AVB errors when reflashing MIUI
+# This **causes** AVB errors when reflashing firmware
 TW_NO_AUTOREFLASH := true
 
 # MTP
@@ -212,5 +220,6 @@ BOARD_ROOT_EXTRA_FOLDERS += external_sd
 PB_TORCH_PATH := "/sys/class/torch/torch/torch_level"
 PB_TORCH_MAX_BRIGHTNESS := 1
 PB_DISABLE_DEFAULT_DM_VERITY := true
+PB_DISABLE_DEFAULT_TREBLE_COMP := false
 
 # unofficialtwrp.com stop stealing our twrp images
