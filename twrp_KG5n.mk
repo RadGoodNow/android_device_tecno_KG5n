@@ -1,13 +1,18 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-#INHERIT GSI KEYS
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Enable project quotas and casefolding for emulated storage without sdcardfs
+$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
+# INHERIT GSI KEYS
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
-#INHERIT TWRP
+# INHERIT TWRP
 $(call inherit-product, vendor/pb/config/common.mk)
 
-#INHERIT FROM THIS DEVICE TREE
+# INHERIT FROM THIS DEVICE TREE
 $(call inherit-product, device/tecno/KG5n/device.mk)
 
 PRODUCT_DEVICE := KG5n
