@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
 #
 ## Please include it in /init.recovery.${ro.hardware}.rc
 #
