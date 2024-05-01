@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2016-2023 Unisoc (Shanghai) Technologies Co., Ltd
+# SPDX-License-Identifier: LicenseRef-Unisoc-General-1.0
+
 /dev/block/by-name/miscdata       0660     system      system
 /dev/block/by-name/persist       0660     system      system
 /dev/block/by-name/sysdumpdb        0660     system     root
