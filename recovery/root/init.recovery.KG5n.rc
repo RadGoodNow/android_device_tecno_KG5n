@@ -24,16 +24,14 @@ on init
     chmod 0666 /dev/hwbinder
     chmod 0666 /dev/vndbinder
     chmod 0755 /dev/binderfs
-    mount tracefs tracefs /sys/kernel/tracing
+    mount pstore pstore /sys/kernel/pstore
     symlink /vendor/firmware /system/etc/firmware
     setprop persist.sys.usb.config mtp,adb
 
 on fs
 # Sensor
-    insmod /socko/adaptive-ts.ko
     insmod /socko/mali_kbase.ko
+    insmod /socko/adaptive-ts.ko
 
 # Mix device-specific information into the entropy pool
-   # copy /proc/cmdline /dev/urandom
-   # copy /prop.default /dev/urandom
-    copy /dev/block/by-name/sysdumpdb /dev/urandom
+    copy /proc/cmdline /dev/urandom
