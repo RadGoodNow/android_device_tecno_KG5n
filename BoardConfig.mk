@@ -47,11 +47,11 @@ TARGET_KERNEL_CONFIG := TECNO-KG5n_defconfig
 TARGET_KERNEL_SOURCE := kernel/tecno/TECNO-KG5n
 
 # CRYPTO STUFF
-TW_INCLUDE_CRYPTO := true
+# TW_INCLUDE_CRYPTO := true
 # TW_INCLUDE_CRYPTO_FBE := true
 # TW_INCLUDE_FBE_METADATA_DECRYPT := true
-BOARD_USES_QCOM_FBE_DECRYPTION := true
-TW_USE_FSCRYPT_POLICY := 1
+# BOARD_USES_QCOM_FBE_DECRYPTION := true
+# TW_USE_FSCRYPT_POLICY := 1
 
 # TEMP
 TW_CUSTOM_CPU_TEMP_PATH = /sys/devices/platform/soc/soc:aon/64200000.spi/spi_master/spi4/spi4.0/sc27xx-fgu/power_supply/sc27xx-fgu/temp
