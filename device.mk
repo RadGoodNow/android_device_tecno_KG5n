@@ -15,6 +15,8 @@ PRODUCT_TARGET_VNDK_VERSION := 30
 # API
 PRODUCT_SHIPPING_API_LEVEL := 30
 
+PRODUCT_PLATFORM := ums9230
+
 # VIRTUAL A/B
 ENABLE_VIRTUAL_AB := true
 
@@ -27,28 +29,12 @@ PRODUCT_PACKAGES += \
     sg_write_buffer \
     f2fs_io \
     check_f2fs
-    
-# Userdata checkpoint
-PRODUCT_PACKAGES += \
-    checkpoint_gc
-
-AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_vendor=true \
-    POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
-    FILESYSTEM_TYPE_vendor=ext4 \
-    POSTINSTALL_OPTIONAL_vendor=true
 
 # PACKAGES
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service \
-    android.hardware.health@2.1-impl.recovery \
-    libhealtd.ums9230
-
-# bootctrl HAL    
-PRODUCT_PACKAGES += \
-    bootctrl.unisoc \
-    bootctrl.ums9230.recovery
+    libhealthd.$(PRODUCT_PLATFORM)
 
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl \
@@ -60,13 +46,14 @@ PRODUCT_PACKAGES += \
     cppreopts.sh \
     update_engine \
     update_verifier \
-    update_engine_sideload \
-    checkpoint_gc 
+    update_engine_sideload
 
 PRODUCT_PACKAGES += \
     fastbootd \
-    android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-impl-mock.recovery
+    android.hardware.fastboot@1.0-impl-mock
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctrl
+
+# Hidl Service
+PRODUCT_ENFORCE_VINTF_MANIFEST := true
