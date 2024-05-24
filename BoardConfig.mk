@@ -32,7 +32,7 @@ TARGET_IS_64_BIT := true
 
 # Bootloader
 TARGET_NO_RADIOIMAGE := true
-TARGET_NO_BOOTLOADER := false
+TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := KG5n
 TARGET_USES_UEFI := true
 
@@ -48,18 +48,9 @@ BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-# TARGET_KERNEL_CONFIG := TECNO-KG5n_defconfig
-# TARGET_KERNEL_SOURCE := kernel/tecno/TECNO-KG5n
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := TECNO-KG5n,TECNO-KG5k,KG5n,KG5k,kg5n,kg5k
-
-# CRYPTO STUFF
-# TW_INCLUDE_CRYPTO := true
-# TW_INCLUDE_CRYPTO_FBE := true
-# TW_INCLUDE_FBE_METADATA_DECRYPT := true
-# BOARD_USES_QCOM_FBE_DECRYPTION := true
-# TW_USE_FSCRYPT_POLICY := 1
 
 # TEMP
 TW_CUSTOM_CPU_TEMP_PATH = /sys/devices/platform/soc/soc:aon/64200000.spi/spi_master/spi4/spi4.0/sc27xx-fgu/power_supply/sc27xx-fgu/temp
@@ -93,14 +84,6 @@ AB_OTA_PARTITIONS += \
     vendor \
     product \
     odmko
-
-# Verified Boot
-BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
-BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
-BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # SUPER PARTITION
 BOARD_SUPER_PARTITION_GROUPS := unisoc_a unisoc_b
@@ -139,15 +122,15 @@ BOARD_ROOT_EXTRA_FOLDERS += metadata
 
 # MODULES
 TARGET_RECOVERY_DEVICE_MODULES += \
-    libkeymaster41 \
-    libpuresoftkeymasterdevice \
+#    libkeymaster41 \
+#    libpuresoftkeymasterdevice \
     ashmemd_aidl_interface-cpp \
     libashmemd_client
 
 # LIBRARIES
 RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
+#    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
+#    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 	
@@ -176,23 +159,19 @@ TARGET_NO_RECOVERY := true
 TW_HAS_NO_RECOVERY_PARTITION := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage/lun.%d/file
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
-RECOVERY_SDCARD_ON_DATA := true
-TW_USE_EXTERNAL_STORAGE := true
 TW_NO_LEGACY_PROPS := true
 TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
 
 # MTP
 TW_HAS_MTP := true
 TW_MTP_DEVICE := /dev/mtp_usb
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage/lun.%d/file
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 
 # Display
 TW_FRAMERATE := 90
 TARGET_SCREEN_DENSITY := 320
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TW_SCREEN_BLANK_ON_BOOT := true
-TW_NO_SCREEN_BLANK := true
 TW_THEME := portrait_hdpi
 
 # Debug
@@ -205,6 +184,8 @@ TARGET_RECOVERY_DEVICE_MODULES += strace
 RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
 
 # SDCARD AND OTG
+TW_USE_EXTERNAL_STORAGE := true
+RECOVERY_SDCARD_ON_DATA := true
 BOARD_ROOT_EXTRA_FOLDERS += usb-otg
 BOARD_ROOT_EXTRA_FOLDERS += external_sd
 
