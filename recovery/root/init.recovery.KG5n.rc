@@ -24,14 +24,14 @@ on init
     chmod 0666 /dev/hwbinder
     chmod 0666 /dev/vndbinder
     chmod 0755 /dev/binderfs
-    mount pstore pstore /sys/kernel/pstore
+    mount pstore pstore /sys/fs/pstore
     symlink /vendor/firmware /system/etc/firmware
     setprop persist.sys.usb.config mtp,adb
+
+# Mix device-specific information into the entropy pool
+    copy /proc/cmdline /dev/urandom
 
 on fs
 # Sensor
     insmod /socko/mali_kbase.ko
     insmod /socko/adaptive-ts.ko
-
-# Mix device-specific information into the entropy pool
-    copy /proc/cmdline /dev/urandom
