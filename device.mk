@@ -19,16 +19,11 @@ PRODUCT_PLATFORM := ums9230
 
 # VIRTUAL A/B
 ENABLE_VIRTUAL_AB := true
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 # Resolution
 TARGET_SCREEN_HEIGHT := 1612
 TARGET_SCREEN_WIDTH := 720
-
-# f2fs utilities
-PRODUCT_PACKAGES += \
-    sg_write_buffer \
-    f2fs_io \
-    check_f2fs
 
 # PACKAGES
 PRODUCT_PACKAGES += \
@@ -49,8 +44,8 @@ PRODUCT_PACKAGES += \
     update_engine_sideload
 
 PRODUCT_PACKAGES += \
-    fastbootd \
-    android.hardware.fastboot@1.0-impl-mock
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctrl
