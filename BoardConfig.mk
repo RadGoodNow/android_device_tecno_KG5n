@@ -1,11 +1,11 @@
+# DEVICE PATH
+DEVICE_PATH := device/tecno/KG5n
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
 # MINIMAL MANIFEST BUILDING SUPPORT
 ALLOW_MISSING_DEPENDENCIES := true
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-
-# DEVICE PATH
-DEVICE_PATH := device/tecno/KG5n
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # ARCH
 TARGET_ARCH := arm64
@@ -22,19 +22,24 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
+TARGET_CPU_SMP := true
+ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
+
 # 64-bit
 TARGET_SUPPORTS_64_BIT_APPS := true
 TARGET_IS_64_BIT := true
 
 # Bootloader
-TARGET_NO_BOOTLOADER := false
+TARGET_NO_RADIOIMAGE := true
+TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := KG5n
 TARGET_USES_UEFI := true
 
 # MKBOOT
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := audit=0 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := audit=0 console=ttyS1,115200n8
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x05400000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -43,15 +48,9 @@ BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-TARGET_KERNEL_CONFIG := TECNO-KG5n_defconfig
-TARGET_KERNEL_SOURCE := kernel/tecno/TECNO-KG5n
 
-# CRYPTO STUFF
-# TW_INCLUDE_CRYPTO := true
-# TW_INCLUDE_CRYPTO_FBE := true
-# TW_INCLUDE_FBE_METADATA_DECRYPT := true
-# BOARD_USES_QCOM_FBE_DECRYPTION := true
-# TW_USE_FSCRYPT_POLICY := 1
+# Assert
+TARGET_OTA_ASSERT_DEVICE := TECNO-KG5n,TECNO-KG5k,KG5n,KG5k,kg5n,kg5k
 
 # TEMP
 TW_CUSTOM_CPU_TEMP_PATH = /sys/devices/platform/soc/soc:aon/64200000.spi/spi_master/spi4/spi4.0/sc27xx-fgu/power_supply/sc27xx-fgu/temp
@@ -69,9 +68,7 @@ endif
 TARGET_BOARD_PLATFORM := ums9230
 TARGET_BOARD_PLATFORM_GPU := mali-g57
 PRODUCT_PLATFORM := ums9230
-
-# GPT Utils
-BOARD_PROVIDES_GPTUTILS := true
+TARGET_SOC := ums9230_1h10
 
 # A/B
 AB_OTA_UPDATER := true
@@ -91,12 +88,11 @@ AB_OTA_PARTITIONS += \
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
-BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH)
-BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 2
-BOARD_AVB_BOOT_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH)
-BOARD_AVB_BOOT_ROLLBACK_INDEX_LOCATION := 2
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+BOARD_AVB_BOOT_ALGORITHM := SHA256_RSA4096
+BOARD_AVB_BOOT_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
+BOARD_AVB_BOOT_ROLLBACK_INDEX := 1
+BOARD_AVB_BOOT_ROLLBACK_INDEX_LOCATION := 1
 
 # SUPER PARTITION
 BOARD_SUPER_PARTITION_GROUPS := unisoc_a unisoc_b
@@ -131,20 +127,19 @@ BOARD_ROOT_EXTRA_FOLDERS := socko odmko
 
 # METADATA
 BOARD_USES_METADATA_PARTITION := true
-BOARD_CHARGER_SHOW_PERCENTAGE := true
 BOARD_ROOT_EXTRA_FOLDERS += metadata
 
 # MODULES
 TARGET_RECOVERY_DEVICE_MODULES += \
-    libkeymaster41 \
-    libpuresoftkeymasterdevice \
+#    libkeymaster41 \
+#    libpuresoftkeymasterdevice \
     ashmemd_aidl_interface-cpp \
     libashmemd_client
 
 # LIBRARIES
 RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
+#    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
+#    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 	
@@ -152,9 +147,9 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
 TW_DEVICE_VERSION:=RadGoodNow@4pda and artumes@4pda
 
 # Hack: prevent anti rollback
-PLATFORM_SECURITY_PATCH := 2024-01-03
-VENDOR_SECURITY_PATCH := 2023-12-28
-PLATFORM_VERSION := 97.0.1
+PLATFORM_SECURITY_PATCH := 2099-12-31
+VENDOR_SECURITY_PATCH := 2099-12-31
+PLATFORM_VERSION := 16.1.0
 
 # Available tools
 TW_EXCLUDE_APEX := true
@@ -166,53 +161,46 @@ TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_USE_TOOLBOX := true
-
-# Recovery
 TW_EXTRA_LANGUAGES := false
+
+# Recovery configuration
+BOARD_CHARGER_SHOW_PERCENTAGE := true
 BOARD_USES_RECOVERY_AS_BOOT := true
+BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_NO_RECOVERY := true
 TW_HAS_NO_RECOVERY_PARTITION := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage/lun.%d/file
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
-RECOVERY_SDCARD_ON_DATA := true
-TW_USE_EXTERNAL_STORAGE := true
 TW_NO_LEGACY_PROPS := true
 TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk"
-
-# Flag added by me but not in official TWRP sources
-# Will be submitted to gerrit
-#
-# Disables "Reflash TWRP after flashing a ROM" option (in both settings and zip install menu)
-# This **causes** AVB errors when reflashing firmware
-TW_NO_AUTOREFLASH := true
 
 # MTP
 TW_HAS_MTP := true
 TW_MTP_DEVICE := /dev/mtp_usb
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage/lun.%d/file
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 
 # Display
 TW_FRAMERATE := 90
 TARGET_SCREEN_DENSITY := 320
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TW_SCREEN_BLANK_ON_BOOT := true
-TW_NO_SCREEN_BLANK := true
 TW_THEME := portrait_hdpi
 
 # Fix reboot to system
 TW_NO_FASTBOOT_BOOT := true
 
 # Debug
+TARGET_USES_LOGD := true
 TWRP_EVENT_LOGGING := true
 TWRP_INCLUDE_LOGCAT := true
-TARGET_USES_LOGD := true
 TARGET_RECOVERY_DEVICE_MODULES += debuggerd
 RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/debuggerd
 TARGET_RECOVERY_DEVICE_MODULES += strace
 RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
 
 # SDCARD AND OTG
+TW_USE_EXTERNAL_STORAGE := true
+RECOVERY_SDCARD_ON_DATA := true
 BOARD_ROOT_EXTRA_FOLDERS += usb-otg
 BOARD_ROOT_EXTRA_FOLDERS += external_sd
 
