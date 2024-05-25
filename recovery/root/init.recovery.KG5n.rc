@@ -24,9 +24,12 @@ on init
     chmod 0666 /dev/hwbinder
     chmod 0666 /dev/vndbinder
     chmod 0755 /dev/binderfs
-    mount tracefs tracefs /sys/kernel/tracing
+    mount pstore pstore /sys/fs/pstore
     symlink /vendor/firmware /system/etc/firmware
     setprop persist.sys.usb.config mtp,adb
+
+# Mix device-specific information into the entropy pool
+    copy /proc/cmdline /dev/urandom
 
 on fs
 # Sensor
@@ -36,6 +39,3 @@ on fs
     insmod /socko/sprd_flash_drv.ko
     insmod /socko/flash_ic_ocp8137.ko
     chown system system /sys/devices/virtual/torch/torch/torch_level
-
-# Mix device-specific information into the entropy pool
-    copy /dev/block/by-name/sysdumpdb /dev/urandom
