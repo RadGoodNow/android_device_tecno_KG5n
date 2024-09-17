@@ -143,7 +143,7 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 	
 # VERSION
-TW_DEVICE_VERSION:=RadGoodNow@4pda and artumes@4pda
+TW_DEVICE_VERSION := RadGoodNow@4pda and artumes@4pda
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
