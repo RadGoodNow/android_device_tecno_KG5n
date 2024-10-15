@@ -8,4 +8,4 @@ product                                  /product            ext4    ro wait,avb
 /dev/block/by-name/socko                 /socko              ext4    ro,noatime,nosuid,nodev,noauto_da_alloc wait,latemount,avb=socko,check,slotselect
 /dev/block/by-name/odmko                 /odmko              ext4    ro,noatime,nosuid,nodev,noauto_da_alloc wait,latemount,avb=odmko,check,slotselect
 
-/dev/block/mmcblk1p1                     /external_sd        vfat    defaults      defaults,check
+/dev/block/mmcblk1p1                     /sdcard        vfat    defaults      defaults,check

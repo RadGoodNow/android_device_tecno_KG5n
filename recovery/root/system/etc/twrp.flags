@@ -8,10 +8,10 @@
 /system_ext_image      emmc     /dev/block/mapper/system_ext                  flags=display="System_ext image";slotselect;backup=1;flashimg=1
 
 # Dynamic Partitions
-/system_root             ext4     /dev/block/mapper/system                     flags=display="System";slotselect;backup=1;flashimg=1
-/system_ext              ext4     /dev/block/mapper/system_ext                 flags=display="System_ext";slotselect;backup=1;flashimg=1
-/product                 ext4     /dev/block/mapper/product                    flags=display="Product";slotselect;backup=1;flashimg=1
-/vendor                  ext4     /dev/block/mapper/vendor                     flags=display="Vendor";slotselect;backup=1;flashimg=1
+/system_root             ext4     /dev/block/mapper/system                     flags=display="System";slotselect;backup=1
+/system_ext              ext4     /dev/block/mapper/system_ext                 flags=display="System_ext";slotselect;backup=1
+/product                 ext4     /dev/block/mapper/product                    flags=display="Product";slotselect;backup=1
+/vendor                  ext4     /dev/block/mapper/vendor                     flags=display="Vendor";slotselect;backup=1
 /boot                    emmc     /dev/block/by-name/boot                      flags=display=boot;slotselect;backup=1;flashimg=1
 /dtbo                    emmc     /dev/block/by-name/dtbo                      flags=display=dtbo;slotselect;backup=1
 /misc                    emmc     /dev/block/by-name/misc                      flags=display=misc;backup=1
@@ -26,8 +26,8 @@
 /vbmeta_vendor           emmc     /dev/block/by-name/vbmeta_vendor             flags=display=vbmeta-vendor;slotselect;backup=1;flashimg=1
 /vbmeta_product          emmc     /dev/block/by-name/vbmeta_product            flags=display=vbmeta-product;slotselect;backup=1;flashimg=1
 # Removable storage
-/external_sd             vfat     /dev/block/mmcblk1p1  /dev/block/mmcblk1     flags=display="external_sd";storage;wipeingui;backup=1;removable;fsflags="utf8"
-/usb-otg                 auto     /dev/block/sda1       /dev/block/sda         flags=display="usb-otg";storage;wipeingui;backup=1;removable
+/sdcard             vfat     /dev/block/mmcblk1p1  /dev/block/mmcblk1     flags=display="external_sd";storage;wipeingui;backup=1;removable;fsflags="utf8"
+/usb-otg                 auto     /dev/block/sda1       /dev/block/sda         flags=display="usb-otg";storage;backup=1;removable
 
 # Other partitions
 /spl                     emmc     /dev/block/mmcblk0boot0                      flags=display=spl;backup=1
