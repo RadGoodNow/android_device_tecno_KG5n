@@ -131,20 +131,20 @@ BOARD_ROOT_EXTRA_FOLDERS += metadata
 
 # MODULES
 TARGET_RECOVERY_DEVICE_MODULES += \
-#    libkeymaster41 \
-#    libpuresoftkeymasterdevice \
+    libkeymaster41 \
+    libpuresoftkeymasterdevice \
     ashmemd_aidl_interface-cpp \
     libashmemd_client
 
 # LIBRARIES
 RECOVERY_LIBRARY_SOURCE_FILES += \
-#    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
-#    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/ashmemd_aidl_interface-cpp.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libashmemd_client.so
 	
 # VERSION
-TW_DEVICE_VERSION:=RadGoodNow@4pda and artumes@4pda
+TW_DEVICE_VERSION := RadGoodNow@4pda and artumes@4pda
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
@@ -193,8 +193,8 @@ TW_NO_FASTBOOT_BOOT := true
 TARGET_USES_LOGD := true
 TWRP_EVENT_LOGGING := true
 TWRP_INCLUDE_LOGCAT := true
-TARGET_RECOVERY_DEVICE_MODULES += debuggerd
-RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/debuggerd
+# TARGET_RECOVERY_DEVICE_MODULES += debuggerd
+# RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/debuggerd
 TARGET_RECOVERY_DEVICE_MODULES += strace
 RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
 
@@ -202,7 +202,7 @@ RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
 TW_USE_EXTERNAL_STORAGE := true
 RECOVERY_SDCARD_ON_DATA := true
 BOARD_ROOT_EXTRA_FOLDERS += usb-otg
-BOARD_ROOT_EXTRA_FOLDERS += external_sd
+# BOARD_ROOT_EXTRA_FOLDERS += external_sd
 
 # PBRP_FLAGS
 PB_TORCH_PATH := "/sys/class/torch/torch/torch_level"
