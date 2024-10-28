@@ -44,7 +44,7 @@ on:
 
 jobs:
   build:
-    if: github.event.repository.owner.id == github.event.sender.id
+#    if: github.event.repository.owner.id == github.event.sender.id
     runs-on: ubuntu-20.04
     permissions:
       contents: write
