@@ -3,6 +3,8 @@ system_ext                               /system_ext         ext4    ro wait,log
 vendor                                   /vendor             ext4    ro wait,avb=vbmeta_vendor,logical,first_stage_mount,slotselect
 product                                  /product            ext4    ro wait,avb=vbmeta_product,logical,first_stage_mount,slotselect
 
+/dev/block/by-name/boot                  /boot               emmc    defaults     defaults,slotselect
+
 /dev/block/by-name/misc                  /misc               emmc    defaults     defaults
 
 /dev/block/by-name/socko                 /socko              ext4    ro,noatime,nosuid,nodev,noauto_da_alloc wait,latemount,avb=socko,check,slotselect
