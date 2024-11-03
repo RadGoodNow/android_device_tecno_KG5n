@@ -19,7 +19,6 @@ on init
     mkdir /dev/cpuset/system-background
     chmod 755 /system/bin/logd
     start logd
-    start boot-hal-1-1
     mkdir /dev/binderfs
     chmod 0666 /dev/binder
     chmod 0666 /dev/hwbinder

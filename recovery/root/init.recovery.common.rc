@@ -101,7 +101,7 @@ on init
     chmod 760 /proc/mdbg/loopcheck
 
 on boot
-   # start boot-hal-1-1
+   start boot-hal-1-1
    # start health-hal-2-1
    # start charger
 
